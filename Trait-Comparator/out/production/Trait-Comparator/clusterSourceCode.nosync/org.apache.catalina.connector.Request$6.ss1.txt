@@ -1,7 +1,0 @@
-2
-
-
-
-    public FailReason getParseFailedReason() {
-        return parseFailedReason;
-    }

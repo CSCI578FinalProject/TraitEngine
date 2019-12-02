@@ -1,7 +1,0 @@
-2
-
-
-
-    public synchronized boolean canWrite() {
-        return state.canWrite();
-    }

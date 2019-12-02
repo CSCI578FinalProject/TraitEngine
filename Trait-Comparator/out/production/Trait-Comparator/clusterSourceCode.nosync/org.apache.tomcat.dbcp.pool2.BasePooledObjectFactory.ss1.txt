@@ -1,7 +1,0 @@
-3
-
-
-    @Override
-    public PooledObject<T> makeObject() throws Exception {
-        return wrap(create());
-    }

@@ -1,7 +1,0 @@
-2
-
-
-    @Override
-    protected final void destroyInternal() throws LifecycleException {
-        gc();
-    }

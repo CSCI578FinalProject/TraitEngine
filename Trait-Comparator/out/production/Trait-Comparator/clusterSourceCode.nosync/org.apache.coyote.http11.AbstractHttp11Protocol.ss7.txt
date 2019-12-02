@@ -1,9 +1,0 @@
-2
-
-    public void setMaxKeepAliveRequests(int mkar) {
-        getEndpoint().setMaxKeepAliveRequests(mkar);
-    }
-
-    public void setMaxKeepAliveRequests(int maxKeepAliveRequests) {
-        this.maxKeepAliveRequests = maxKeepAliveRequests;
-    }

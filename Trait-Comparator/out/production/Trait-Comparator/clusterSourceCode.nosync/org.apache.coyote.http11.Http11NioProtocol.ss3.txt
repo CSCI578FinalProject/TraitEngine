@@ -1,8 +1,0 @@
-2
-
-
-    public long getSelectorTimeout() {
-        return ((NioEndpoint)getEndpoint()).getSelectorTimeout();
-    }
-
-    public long getSelectorTimeout(){ return this.selectorTimeout; }

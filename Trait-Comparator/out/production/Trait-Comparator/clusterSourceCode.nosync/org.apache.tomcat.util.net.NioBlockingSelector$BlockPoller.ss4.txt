@@ -1,8 +1,0 @@
-5
-
-
-    public synchronized void clear() {
-        queue = new Object[size];
-        insert = 0;
-        remove = 0;
-    }

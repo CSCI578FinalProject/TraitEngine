@@ -1,8 +1,0 @@
-2
-
-
-
-    @Override
-    public int getMaxFrameSize() {
-        return localSettings.getMaxFrameSize();
-    }

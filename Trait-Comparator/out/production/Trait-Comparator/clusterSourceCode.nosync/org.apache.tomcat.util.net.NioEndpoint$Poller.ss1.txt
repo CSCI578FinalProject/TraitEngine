@@ -1,6 +1,0 @@
-9
-
-
-    public long getTimeoutInterval() {
-        return timeoutInterval;
-    }

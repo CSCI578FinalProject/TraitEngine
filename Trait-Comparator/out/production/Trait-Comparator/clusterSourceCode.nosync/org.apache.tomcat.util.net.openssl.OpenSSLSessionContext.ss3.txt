@@ -1,9 +1,0 @@
-2
-
-
-    /**
-     * Get the mode of the current used internal session cache.
-     * @param ctx Server or Client context to use.
-     * @return the value set
-     */
-    public static native long getSessionCacheMode(long ctx);

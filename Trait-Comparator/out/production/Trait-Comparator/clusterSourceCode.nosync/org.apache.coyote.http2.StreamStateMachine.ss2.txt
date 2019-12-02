@@ -1,7 +1,0 @@
-2
-
-
-
-    public synchronized boolean isFrameTypePermitted(FrameType frameType) {
-        return state.isFrameTypePermitted(frameType);
-    }

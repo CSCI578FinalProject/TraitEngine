@@ -1,7 +1,0 @@
-2
-
-
-
-    public void setSession(SSLSession session) {
-        this.session = session;
-    }

@@ -1,8 +1,0 @@
-2
-
-
-    public void setTcpNoDelay(boolean tcpNoDelay) {
-        this.tcpNoDelay = Boolean.valueOf(tcpNoDelay);
-    }
-
-    public void setTcpNoDelay(boolean tcpNoDelay) { socketProperties.setTcpNoDelay(tcpNoDelay); }

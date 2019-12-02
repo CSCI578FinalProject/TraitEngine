@@ -1,6 +1,0 @@
-5
-
-
-    public Set<String> getPathsAcceptingParams() {
-        return pathsAcceptingParams;
-    }

@@ -1,9 +1,0 @@
-4
-
-
-    void setSocketWrapper(SocketWrapperBase<?> wrapper);
-
-
-    public final HttpUpgradeHandler getHttpUpgradeHandler() {
-        return httpUpgradeHandler;
-    }

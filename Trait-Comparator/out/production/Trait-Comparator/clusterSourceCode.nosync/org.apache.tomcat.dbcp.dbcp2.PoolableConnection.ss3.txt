@@ -1,9 +1,0 @@
-2
-
-
-
-    @Override
-    protected void passivate() throws SQLException {
-        super.passivate();
-        setClosedInternal(true);
-    }

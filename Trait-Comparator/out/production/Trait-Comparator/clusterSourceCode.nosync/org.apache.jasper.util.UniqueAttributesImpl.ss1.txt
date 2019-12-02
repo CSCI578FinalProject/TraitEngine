@@ -1,8 +1,0 @@
-2
-
-
-    @Override
-    public void clear() {
-        qNames.clear();
-        super.clear();
-    }

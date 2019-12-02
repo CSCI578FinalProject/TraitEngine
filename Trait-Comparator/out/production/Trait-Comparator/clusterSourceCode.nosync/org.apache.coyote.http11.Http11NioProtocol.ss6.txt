@@ -1,8 +1,0 @@
-2
-
-
-    public int getPollerThreadPriority() {
-      return ((NioEndpoint)getEndpoint()).getPollerThreadPriority();
-    }
-
-    public int getPollerThreadPriority() { return pollerThreadPriority; }

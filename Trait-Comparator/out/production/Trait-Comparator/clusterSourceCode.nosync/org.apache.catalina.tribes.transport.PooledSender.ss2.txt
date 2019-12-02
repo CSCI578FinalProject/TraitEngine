@@ -1,8 +1,0 @@
-2
-
-
-
-    public void setPoolSize(int poolSize) {
-        this.poolSize = poolSize;
-        queue.setLimit(poolSize);
-    }

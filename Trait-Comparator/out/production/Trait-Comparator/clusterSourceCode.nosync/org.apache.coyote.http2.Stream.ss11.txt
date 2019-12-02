@@ -1,7 +1,0 @@
-1
-
-
-
-    boolean canWrite() {
-        return state.canWrite();
-    }

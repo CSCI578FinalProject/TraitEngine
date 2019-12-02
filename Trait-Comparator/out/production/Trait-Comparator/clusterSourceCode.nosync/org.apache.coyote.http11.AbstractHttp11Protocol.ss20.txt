@@ -1,6 +1,0 @@
-1
-
-    public void setSSLCertificateFile(String certificateFile) {
-        registerDefaultSSLHostConfig();
-        defaultSSLHostConfig.setCertificateFile(certificateFile);
-    }

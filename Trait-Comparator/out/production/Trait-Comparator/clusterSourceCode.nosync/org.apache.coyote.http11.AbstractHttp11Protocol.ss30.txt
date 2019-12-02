@@ -1,3 +1,0 @@
-5
-
-    public void setHandler(Handler<S> handler ) { this.handler = handler; }

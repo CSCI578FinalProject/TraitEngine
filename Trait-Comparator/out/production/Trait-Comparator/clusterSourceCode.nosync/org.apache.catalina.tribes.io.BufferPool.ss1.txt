@@ -1,6 +1,0 @@
-2
-
-
-    public void clear() {
-        if ( pool != null ) pool.clear();
-    }

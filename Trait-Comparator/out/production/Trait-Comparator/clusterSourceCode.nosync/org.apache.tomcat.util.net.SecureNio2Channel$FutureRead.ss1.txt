@@ -1,3 +1,0 @@
-4
-
-    public SocketBufferHandler getSocketBufferHandler() { return socketBufferHandler; }

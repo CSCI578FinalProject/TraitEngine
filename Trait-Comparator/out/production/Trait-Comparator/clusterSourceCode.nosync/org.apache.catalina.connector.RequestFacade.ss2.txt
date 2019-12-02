@@ -1,8 +1,0 @@
-3
-
-
-    @Override
-    public boolean authenticate(HttpServletResponse response)
-    throws IOException, ServletException {
-        return request.authenticate(response);
-    }

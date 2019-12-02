@@ -1,9 +1,0 @@
-2
-
-
-    @Override
-    public int getActiveSessionsFull() {
-        LazyReplicatedMap<String,Session> map =
-                (LazyReplicatedMap<String,Session>)sessions;
-        return map.sizeFull();
-    }

@@ -1,7 +1,0 @@
-2
-
-    public void setPort(int port) {
-        endpoint.setPort(port);
-    }
-
-    public void setPort(int port ) { this.port=port; }

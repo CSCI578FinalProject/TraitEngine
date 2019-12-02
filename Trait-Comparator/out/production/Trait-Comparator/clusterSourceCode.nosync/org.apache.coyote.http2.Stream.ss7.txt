@@ -1,7 +1,0 @@
-2
-
-
-
-    ByteBuffer getInputByteBuffer() {
-        return inputBuffer.getInBuffer();
-    }

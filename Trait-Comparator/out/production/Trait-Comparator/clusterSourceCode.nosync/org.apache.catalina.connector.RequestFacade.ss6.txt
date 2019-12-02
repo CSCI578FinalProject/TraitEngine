@@ -1,7 +1,0 @@
-3
-
-
-    /**
-     * @return the instance manager associated with this context.
-     */
-    public InstanceManager getInstanceManager();

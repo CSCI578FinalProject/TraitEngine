@@ -1,7 +1,0 @@
-2
-
-
-    @Override
-    public InputStream getInputStream() throws IOException {
-        return fileItem.getInputStream();
-    }

@@ -1,6 +1,0 @@
-2
-
-
-    public int getLargestPoolSize() {
-        return (executor != null) ? executor.getLargestPoolSize() : 0;
-    }

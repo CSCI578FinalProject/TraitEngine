@@ -1,8 +1,0 @@
-8
-
-
-
-    @Override
-    public void pingReceive(byte[] payload, boolean ack) throws IOException {
-        pingManager.receivePing(payload, ack);
-    }

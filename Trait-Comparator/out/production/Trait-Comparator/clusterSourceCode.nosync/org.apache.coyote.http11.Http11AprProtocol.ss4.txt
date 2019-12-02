@@ -1,6 +1,0 @@
-2
-
-
-    public int getSendfileSize() { return ((AprEndpoint)getEndpoint()).getSendfileSize(); }
-
-    public int getSendfileSize() { return sendfileSize; }

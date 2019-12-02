@@ -1,6 +1,0 @@
-2
-
-
-    public boolean isAsyncDispatching() {
-        return state.isDispatching();
-    }

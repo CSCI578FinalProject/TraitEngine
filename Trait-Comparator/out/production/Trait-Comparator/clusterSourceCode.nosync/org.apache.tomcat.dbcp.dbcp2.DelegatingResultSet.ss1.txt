@@ -1,6 +1,0 @@
-2
-
-
-    public ResultSet getDelegate() {
-        return _res;
-    }

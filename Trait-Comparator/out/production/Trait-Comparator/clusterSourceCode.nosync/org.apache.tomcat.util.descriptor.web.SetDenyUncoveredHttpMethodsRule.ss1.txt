@@ -1,5 +1,0 @@
-2
-
-    public void setDenyUncoveredHttpMethods(boolean denyUncoveredHttpMethods) {
-        this.denyUncoveredHttpMethods = denyUncoveredHttpMethods;
-    }

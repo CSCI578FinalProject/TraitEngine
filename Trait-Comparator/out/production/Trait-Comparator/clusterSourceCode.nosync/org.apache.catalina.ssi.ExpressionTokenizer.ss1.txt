@@ -1,8 +1,0 @@
-2
-
-
-
-    protected boolean isMetaChar(char c) {
-        return Character.isWhitespace(c) || c == '(' || c == ')' || c == '!'
-                || c == '<' || c == '>' || c == '|' || c == '&' || c == '=';
-    }

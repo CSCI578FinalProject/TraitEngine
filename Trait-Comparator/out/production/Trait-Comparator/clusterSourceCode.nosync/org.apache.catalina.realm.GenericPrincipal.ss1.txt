@@ -1,9 +1,0 @@
-2
-
-
-
-    // ----------------------------------------------------------- Serialization
-
-    private Object writeReplace() {
-        return new SerializablePrincipal(name, password, roles, userPrincipal);
-    }

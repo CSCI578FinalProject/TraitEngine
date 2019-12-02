@@ -1,3 +1,0 @@
-2
-
-            pos = nameEnd = getTokenEndPosition(bytes,pos,end,version,true);

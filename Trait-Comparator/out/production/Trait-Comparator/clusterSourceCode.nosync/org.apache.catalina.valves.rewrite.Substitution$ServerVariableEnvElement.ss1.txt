@@ -1,6 +1,0 @@
-2
-
-
-    public String resolveEnv(String key) {
-        return System.getProperty(key);
-    }

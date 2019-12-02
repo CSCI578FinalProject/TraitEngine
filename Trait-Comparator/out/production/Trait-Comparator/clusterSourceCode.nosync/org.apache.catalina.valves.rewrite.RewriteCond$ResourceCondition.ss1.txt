@@ -1,4 +1,0 @@
-2
-
-
-    public abstract boolean resolveResource(int type, String name);

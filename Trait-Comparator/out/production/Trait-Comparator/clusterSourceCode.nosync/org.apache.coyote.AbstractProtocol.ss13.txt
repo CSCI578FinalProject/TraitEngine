@@ -1,6 +1,0 @@
-2
-
-    public InetAddress getAddress() { return address; }
-
-
-    public InetAddress getAddress() { return endpoint.getAddress(); }

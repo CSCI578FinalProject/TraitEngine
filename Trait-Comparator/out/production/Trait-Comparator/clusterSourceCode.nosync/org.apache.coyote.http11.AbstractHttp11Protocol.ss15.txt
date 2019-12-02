@@ -1,0 +1,15 @@
+2
+
+
+
+    public void setDisableSessionTickets(boolean disableSessionTickets) {
+        setProperty("disableSessionTickets", Type.OPENSSL);
+        this.disableSessionTickets = disableSessionTickets;
+    }
+
+
+
+    public void setSSLDisableSessionTickets(boolean disableSessionTickets) {
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setDisableSessionTickets(disableSessionTickets);
+    }

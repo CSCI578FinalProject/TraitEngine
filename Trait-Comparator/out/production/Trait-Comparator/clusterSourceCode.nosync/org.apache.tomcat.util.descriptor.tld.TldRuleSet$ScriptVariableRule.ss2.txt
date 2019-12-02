@@ -1,0 +1,6 @@
+3
+
+
+    public List<TagVariableInfo> getVariables() {
+        return variables;
+    }

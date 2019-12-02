@@ -1,0 +1,13 @@
+2
+
+
+    public long getMaxSize() {
+        // Internally bytes, externally kilobytes
+        return maxSize / 1024;
+    }
+
+
+    @Override
+    public long getCacheMaxSize() {
+        return cache.getMaxSize();
+    }

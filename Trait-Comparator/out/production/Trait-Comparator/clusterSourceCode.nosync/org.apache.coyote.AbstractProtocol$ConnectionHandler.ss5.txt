@@ -1,0 +1,96 @@
+20
+
+
+
+    protected abstract Processor createUpgradeProcessor(
+            SocketWrapperBase<?> socket, ByteBuffer leftoverInput,
+            UpgradeToken upgradeToken);
+
+
+
+    /**
+     * Create and configure a new Processor instance for the current protocol
+     * implementation.
+     *
+     * @return A fully configured Processor instance that is ready to use
+     */
+    protected abstract Processor createProcessor();
+
+
+    UpgradeToken getUpgradeToken();
+
+
+    /**
+     * @param socketWrapper The socketWrapper for the connection that requires
+     *                      a processor
+     * @param adapter The Adapter instance that provides access to the standard
+     *                Engine/Host/Context/Wrapper processing chain
+     *
+     * @return A processor instance for processing a connection using this
+     *         protocol.
+     */
+    public Processor getProcessor(SocketWrapperBase<?> socketWrapper, Adapter adapter);
+
+
+    /**
+     * Allows retrieving additional input during the upgrade process
+     * @return leftover bytes
+     */
+    ByteBuffer getLeftoverInput();
+
+    public String getNegotiatedProtocol() { return negotiatedProtocol; }
+
+
+    /**
+     * Process a connection. This is called whenever an event occurs (e.g. more
+     * data arrives) that allows processing to continue for a connection that is
+     * not currently being processed.
+     *
+     * @param socketWrapper The connection to process
+     * @param status The status of the connection that triggered this additional
+     *               processing
+     *
+     * @return The state the caller should put the socket in when this method
+     *         returns
+     *
+     * @throws IOException If an I/O error occurs during the processing of the
+     *         request
+     */
+    SocketState process(SocketWrapperBase<?> socketWrapper, SocketEvent status) throws IOException;
+
+
+    public final InstanceManager getInstanceManager() {
+        return instanceManager;
+    }
+
+    boolean isAsync();
+
+    public String getClientCertProvider() { return clientCertProvider; }
+
+
+
+    public void addWaitingProcessor(Processor processor) {
+        waitingProcessors.add(processor);
+    }
+
+
+    /**
+     * Set the SSL information for this HTTP connection.
+     *
+     * @param sslSupport The SSL support object to use for this connection
+     */
+    void setSslSupport(SSLSupport sslSupport);
+
+
+    public abstract SSLSupport getSslSupport(String clientCertProvider);
+
+    public void setUpgraded(boolean upgraded) { this.upgraded = upgraded; }
+
+
+    boolean isUpgrade();
+
+
+
+    public void removeWaitingProcessor(Processor processor) {
+        waitingProcessors.remove(processor);
+    }

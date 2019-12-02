@@ -1,0 +1,11 @@
+3
+
+
+    public byte[] getPayload() {
+        return payload;
+    }
+
+
+    public byte[] getDomain() {
+        return domain;
+    }

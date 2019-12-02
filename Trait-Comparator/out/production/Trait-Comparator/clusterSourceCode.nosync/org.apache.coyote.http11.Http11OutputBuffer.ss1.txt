@@ -1,0 +1,43 @@
+6
+
+
+
+    @Override
+    public long getBytesWritten() {
+        if (lastActiveFilter == -1) {
+            return outputStreamOutputBuffer.getBytesWritten();
+        } else {
+            return activeFilters[lastActiveFilter].getBytesWritten();
+        }
+    }
+
+
+
+    /**
+     * Bytes written to the underlying socket. This includes the effects of
+     * chunking, compression, etc.
+     *
+     * @return  Bytes written for the current request
+     */
+    public long getBytesWritten();
+
+
+
+    @Override
+    public long getBytesWritten() {
+        return buffer.getBytesWritten();
+    }
+
+
+
+    @Override
+    public long getBytesWritten() {
+        return buffer.getBytesWritten();
+    }
+
+
+
+    @Override
+    public long getBytesWritten() {
+        return buffer.getBytesWritten();
+    }

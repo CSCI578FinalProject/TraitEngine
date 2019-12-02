@@ -1,0 +1,17 @@
+2
+
+    public void setMaxThreads(int maxThreads) {
+        this.maxThreads = maxThreads;
+        Executor executor = this.executor;
+        if (running && executor != null) {
+            if (executor instanceof java.util.concurrent.ThreadPoolExecutor) {
+                ((java.util.concurrent.ThreadPoolExecutor) executor).setMaximumPoolSize(maxThreads);
+            } else if (executor instanceof ResizableExecutor) {
+                ((ResizableExecutor) executor).resizePool(minSpareThreads, maxThreads);
+            }
+        }
+    }
+
+    public void setMaxThreads(int maxThreads) {
+        endpoint.setMaxThreads(maxThreads);
+    }

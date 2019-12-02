@@ -1,0 +1,6 @@
+2
+
+
+    public boolean isAsyncStarted() {
+        return state.isStarted();
+    }

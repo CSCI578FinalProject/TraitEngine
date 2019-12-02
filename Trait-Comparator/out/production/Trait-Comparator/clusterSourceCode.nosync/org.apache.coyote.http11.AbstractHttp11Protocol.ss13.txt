@@ -1,0 +1,15 @@
+2
+
+
+
+    public void setTruststorePass(String truststorePassword){
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setTruststorePassword(truststorePassword);
+    }
+
+
+
+    public void setTruststorePassword(String truststorePassword) {
+        setProperty("truststorePassword", Type.JSSE);
+        this.truststorePassword = truststorePassword;
+    }

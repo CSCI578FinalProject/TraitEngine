@@ -1,0 +1,8 @@
+2
+
+
+
+    @Override
+    public Set<Entry<String, V>> entrySet() {
+        return new EntrySet<>(map.entrySet());
+    }

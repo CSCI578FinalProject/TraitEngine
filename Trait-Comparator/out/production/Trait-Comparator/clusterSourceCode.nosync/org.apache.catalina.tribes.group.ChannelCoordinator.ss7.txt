@@ -1,0 +1,13 @@
+2
+
+
+    public static void removeSenderState(Member member) {
+        memberStates.remove(member);
+    }
+
+
+    @Override
+    public void memberDisappeared(Member member){
+        SenderState.removeSenderState(member);
+        super.memberDisappeared(member);
+    }

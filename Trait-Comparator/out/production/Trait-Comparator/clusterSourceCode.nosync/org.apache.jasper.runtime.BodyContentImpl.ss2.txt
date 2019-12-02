@@ -1,0 +1,13 @@
+2
+
+
+    /**
+     * Sets the writer to which all output is written.
+     */
+    void setWriter(Writer writer) {
+        this.writer = writer;
+        closed = false;
+        if (writer == null) {
+            clearBody();
+        }
+    }

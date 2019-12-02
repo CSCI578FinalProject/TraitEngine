@@ -1,0 +1,23 @@
+14
+
+
+    public void setSendfile(boolean sendfile) {
+        this.sendfile = sendfile;
+    }
+
+
+    public MessageBytes protocol() {
+        return protoMB;
+    }
+
+
+
+    public void setInputBuffer(InputBuffer inputBuffer) {
+        this.inputBuffer = inputBuffer;
+    }
+
+
+
+    public void setOutputBuffer(OutputBuffer outputBuffer) {
+        this.outputBuffer = outputBuffer;
+    }

@@ -1,0 +1,7 @@
+2
+
+    public UpgradeProtocol[] findUpgradeProtocols();
+
+    public UpgradeProtocol[] findUpgradeProtocols() {
+        return protocolHandler.findUpgradeProtocols();
+    }

@@ -1,0 +1,11 @@
+2
+
+    protected abstract void populateLocalName();
+
+
+    public String getLocalName() {
+        if (localName == null) {
+            populateLocalName();
+        }
+        return localName;
+    }

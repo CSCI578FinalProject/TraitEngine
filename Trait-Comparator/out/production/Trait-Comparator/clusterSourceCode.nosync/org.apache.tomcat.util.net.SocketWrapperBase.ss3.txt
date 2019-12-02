@@ -1,0 +1,11 @@
+2
+
+    protected abstract void populateLocalPort();
+
+
+    public int getLocalPort() {
+        if (localPort == -1) {
+            populateLocalPort();
+        }
+        return localPort;
+    }

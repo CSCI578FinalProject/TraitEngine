@@ -1,0 +1,7 @@
+3
+
+
+    @Override
+    protected SessionListener getSessionListener(String ssoId) {
+        return new ClusterSingleSignOnListener(ssoId);
+    }

@@ -1,0 +1,10 @@
+2
+
+    public void setExecutor(Executor executor) {
+        this.executor = executor;
+        this.internalExecutor = (executor == null);
+    }
+
+    public void setExecutor(Executor executor) {
+        endpoint.setExecutor(executor);
+    }

@@ -1,0 +1,7 @@
+2
+
+    public void setSSLEnabled(boolean SSLEnabled) { this.SSLEnabled = SSLEnabled; }
+
+    public void setSSLEnabled(boolean SSLEnabled) {
+        getEndpoint().setSSLEnabled(SSLEnabled);
+    }

@@ -1,0 +1,5 @@
+2
+
+    public void setDeferAccept(boolean deferAccept) { ((AprEndpoint)getEndpoint()).setDeferAccept(deferAccept); }
+
+    public void setDeferAccept(boolean deferAccept) { this.deferAccept = deferAccept; }

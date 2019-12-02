@@ -1,0 +1,26 @@
+6
+
+
+    @Override
+    public void setCluster(CatalinaCluster cluster) {
+        this.cluster = cluster;
+    }
+
+
+    @Override
+    protected void startInternal() throws LifecycleException {
+        super.startInternal();
+        if (getCluster() == null) {
+            Cluster cluster = getContext().getCluster();
+            if (cluster instanceof CatalinaCluster) {
+                setCluster((CatalinaCluster)cluster);
+            }
+        }
+        if (cluster != null) cluster.registerManager(this);
+    }
+
+
+    @Override
+    public CatalinaCluster getCluster() {
+        return cluster;
+    }

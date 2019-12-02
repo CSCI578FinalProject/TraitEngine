@@ -1,0 +1,24 @@
+2
+
+
+
+    @Override
+    public int getEffectiveMinorVersion() {
+        if (SecurityUtil.isPackageProtectionEnabled()) {
+            return ((Integer) doPrivileged("getEffectiveMinorVersion",
+                    null)).intValue();
+        } else  {
+            return context.getEffectiveMinorVersion();
+        }
+    }
+
+
+
+    @Override
+    public String getMimeType(String file) {
+        if (SecurityUtil.isPackageProtectionEnabled()) {
+            return (String)doPrivileged("getMimeType", new Object[]{file});
+        } else {
+            return context.getMimeType(file);
+        }
+    }

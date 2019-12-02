@@ -1,0 +1,30 @@
+4
+
+
+
+    // ----------------------------------------- Common configuration properties
+
+    // TODO: This certificate setter can be removed once it is no longer
+    // necessary to support the old configuration attributes (Tomcat 10?).
+
+    public void setCertificateKeyPassword(String certificateKeyPassword) {
+        registerDefaultCertificate();
+        defaultCertificate.setCertificateKeyPassword(certificateKeyPassword);
+    }
+
+
+
+    public void setCertificateKeyPassword(String certificateKeyPassword) {
+        this.certificateKeyPassword = certificateKeyPassword;
+    }
+
+
+    public void setKeyPass(String certificateKeyPassword) {
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setCertificateKeyPassword(certificateKeyPassword);
+    }
+
+    public void setSSLPassword(String certificateKeyPassword) {
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setCertificateKeyPassword(certificateKeyPassword);
+    }

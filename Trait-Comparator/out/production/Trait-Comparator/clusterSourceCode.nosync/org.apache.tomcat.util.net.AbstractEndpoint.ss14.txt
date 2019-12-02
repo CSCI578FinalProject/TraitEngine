@@ -1,0 +1,14 @@
+3
+
+
+    public final void stop() throws Exception {
+        stopInternal();
+        if (bindState == BindState.BOUND_ON_START) {
+            unbind();
+            bindState = BindState.UNBOUND;
+        }
+    }
+
+    public abstract void stopInternal() throws Exception;
+
+    public abstract void unbind() throws Exception;

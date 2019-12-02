@@ -1,0 +1,20 @@
+4
+
+
+
+    //--- Usage tracking support -----------------------------------------------
+
+    @Override
+    public void use(T pooledObject) {
+        AbandonedConfig ac = this.abandonedConfig;
+        if (ac != null && ac.getUseUsageTracking()) {
+            PooledObject<T> wrapper = allObjects.get(new IdentityWrapper<>(pooledObject));
+            wrapper.use();
+        }
+    }
+
+
+    /**
+     * Record the current stack trace as the last time the object was used.
+     */
+    void use();

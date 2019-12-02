@@ -1,0 +1,8 @@
+2
+
+
+    @Override
+    public boolean keepalive() {
+        //do nothing, the pool checks on every return
+        return (queue==null)?false:queue.checkIdleKeepAlive();
+    }

@@ -1,0 +1,16 @@
+2
+
+
+    @Override
+    public URL getBaseUrl() {
+        try {
+            return getFileBase().toURI().toURL();
+        } catch (MalformedURLException e) {
+            return null;
+        }
+    }
+
+
+    protected final File getFileBase() {
+        return fileBase;
+    }

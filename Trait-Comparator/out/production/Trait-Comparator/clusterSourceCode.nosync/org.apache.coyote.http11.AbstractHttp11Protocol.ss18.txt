@@ -1,0 +1,15 @@
+2
+
+
+
+    public void setTruststoreAlgorithm(String truststoreAlgorithm) {
+        setProperty("truststoreAlgorithm", Type.JSSE);
+        this.truststoreAlgorithm = truststoreAlgorithm;
+    }
+
+
+
+    public void setTruststoreAlgorithm(String truststoreAlgorithm){
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setTruststoreAlgorithm(truststoreAlgorithm);
+    }

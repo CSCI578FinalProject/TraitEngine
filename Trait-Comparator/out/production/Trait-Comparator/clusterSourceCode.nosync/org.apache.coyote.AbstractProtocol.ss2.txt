@@ -1,0 +1,5 @@
+2
+
+    public void setBacklog(int backlog) { endpoint.setBacklog(backlog); }
+
+    public void setBacklog(int backlog) { if (backlog > 0) this.backlog = backlog; }

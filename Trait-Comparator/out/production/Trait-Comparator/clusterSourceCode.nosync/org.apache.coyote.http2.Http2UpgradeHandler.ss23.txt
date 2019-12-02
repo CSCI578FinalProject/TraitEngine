@@ -1,0 +1,12 @@
+2
+
+
+
+    private void checkPauseState() throws IOException {
+        if (connectionState.get() == ConnectionState.PAUSING) {
+            if (pausedNanoTime + pingManager.getRoundTripTimeNano() < System.nanoTime()) {
+                connectionState.compareAndSet(ConnectionState.PAUSING, ConnectionState.PAUSED);
+                writeGoAwayFrame(maxProcessedStreamId, Http2Error.NO_ERROR.getCode(), null);
+            }
+        }
+    }

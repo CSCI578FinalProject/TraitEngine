@@ -1,0 +1,16 @@
+3
+
+
+    public boolean getSendfile() {
+        return sendfile;
+    }
+
+
+
+    /**
+     * Does this ProtocolHandler support sendfile?
+     *
+     * @return <code>true</code> if this Protocol Handler supports sendfile,
+     *         otherwise <code>false</code>
+     */
+    public boolean isSendfileSupported();

@@ -1,0 +1,9 @@
+2
+
+    public void setKeepAliveTimeout(int keepAliveTimeout) {
+        this.keepAliveTimeout = Integer.valueOf(keepAliveTimeout);
+    }
+
+    public void setKeepAliveTimeout(int keepAliveTimeout) {
+        endpoint.setKeepAliveTimeout(keepAliveTimeout);
+    }

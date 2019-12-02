@@ -1,0 +1,15 @@
+2
+
+
+
+    public void setTruststoreFile(String truststoreFile){
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setTruststoreFile(truststoreFile);
+    }
+
+
+
+    public void setTruststoreFile(String truststoreFile) {
+        setProperty("truststoreFile", Type.JSSE);
+        this.truststoreFile = truststoreFile;
+    }

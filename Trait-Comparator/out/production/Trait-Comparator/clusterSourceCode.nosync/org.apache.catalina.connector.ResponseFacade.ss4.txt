@@ -1,0 +1,186 @@
+14
+
+
+
+    @Override
+    public boolean isCommitted() {
+
+        if (response == null) {
+            throw new IllegalStateException(
+                            sm.getString("responseFacade.nullResponse"));
+        }
+
+        return (response.isAppCommitted());
+    }
+
+
+
+    /**
+     * @return the content length that was set or calculated for this Response.
+     */
+    public int getContentLength() {
+        return getCoyoteResponse().getContentLength();
+    }
+
+
+    public int getContentLength() {
+        long length = getContentLengthLong();
+
+        if (length < Integer.MAX_VALUE) {
+            return (int) length;
+        }
+        return -1;
+    }
+
+
+
+    /**
+     * Application commit flag accessor.
+     *
+     * @return <code>true</code> if the application has committed the response
+     */
+    public boolean isAppCommitted() {
+        return (this.appCommitted || isCommitted() || isSuspended()
+                || ((getContentLength() > 0)
+                    && (getContentWritten() >= getContentLength())));
+    }
+
+
+
+    @Override
+    public void setContentLength(int len) {
+
+        if (isCommitted()) {
+            return;
+        }
+
+        response.setContentLength(len);
+
+    }
+
+
+
+    /**
+     * TODO SERVLET 3.1
+     */
+    @Override
+    public void setContentLengthLong(long length) {
+        if (isCommitted()) {
+            return;
+        }
+
+        response.setContentLengthLong(length);
+
+    }
+
+
+
+    @Override
+    public void setLocale(Locale loc) {
+
+        if (isCommitted()) {
+            return;
+        }
+
+        response.setLocale(loc);
+    }
+
+
+
+    @Override
+    public void addCookie(Cookie cookie) {
+
+        if (isCommitted()) {
+            return;
+        }
+
+        response.addCookie(cookie);
+
+    }
+
+
+
+    @Override
+    public void setDateHeader(String name, long date) {
+
+        if (isCommitted()) {
+            return;
+        }
+
+        if(Globals.IS_SECURITY_ENABLED) {
+            AccessController.doPrivileged(new DateHeaderPrivilegedAction
+                                             (name, date, false));
+        } else {
+            response.setDateHeader(name, date);
+        }
+
+    }
+
+
+
+    @Override
+    public void addDateHeader(String name, long date) {
+
+        if (isCommitted()) {
+            return;
+        }
+
+        if(Globals.IS_SECURITY_ENABLED) {
+            AccessController.doPrivileged(new DateHeaderPrivilegedAction
+                                             (name, date, true));
+        } else {
+            response.addDateHeader(name, date);
+        }
+
+    }
+
+
+
+    @Override
+    public void setHeader(String name, String value) {
+
+        if (isCommitted()) {
+            return;
+        }
+
+        response.setHeader(name, value);
+
+    }
+
+
+
+    @Override
+    public void addHeader(String name, String value) {
+
+        if (isCommitted()) {
+            return;
+        }
+
+        response.addHeader(name, value);
+
+    }
+
+
+
+    @Override
+    public void setStatus(int sc) {
+
+        if (isCommitted()) {
+            return;
+        }
+
+        response.setStatus(sc);
+
+    }
+
+
+
+    @Override
+    public void setStatus(int sc, String sm) {
+
+        if (isCommitted()) {
+            return;
+        }
+
+        response.setStatus(sc, sm);
+    }

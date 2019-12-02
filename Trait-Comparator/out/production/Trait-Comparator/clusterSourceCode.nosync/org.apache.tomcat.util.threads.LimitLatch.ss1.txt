@@ -1,0 +1,11 @@
+2
+
+
+    /**
+     * Returns <code>true</code> if there is at least one thread waiting to
+     * acquire the shared lock, otherwise returns <code>false</code>.
+     * @return <code>true</code> if threads are waiting
+     */
+    public boolean hasQueuedThreads() {
+        return sync.hasQueuedThreads();
+    }

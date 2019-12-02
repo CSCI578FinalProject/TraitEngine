@@ -1,0 +1,15 @@
+2
+
+
+
+    public void setSessionCacheSize(int sessionCacheSize){
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setSessionCacheSize(sessionCacheSize);
+    }
+
+
+
+    public void setSessionCacheSize(int sessionCacheSize) {
+        setProperty("sessionCacheSize", Type.JSSE);
+        this.sessionCacheSize = sessionCacheSize;
+    }

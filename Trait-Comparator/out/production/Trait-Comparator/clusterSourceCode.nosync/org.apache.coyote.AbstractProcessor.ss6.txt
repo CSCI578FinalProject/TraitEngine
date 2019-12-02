@@ -1,0 +1,15 @@
+2
+
+
+
+    public void setAsyncTimeout(long timeout) {
+        asyncTimeout = timeout;
+    }
+
+
+
+    private void doTimeoutAsync() {
+        // Avoid multiple timeouts
+        setAsyncTimeout(-1);
+        socketWrapper.processSocket(SocketEvent.TIMEOUT, true);
+    }

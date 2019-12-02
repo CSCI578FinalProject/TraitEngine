@@ -1,0 +1,25 @@
+2
+
+
+
+    /**
+     * Set the ServletRequest.attribute to look for to perform
+     * conditional logging. Set to null to log everything.
+     *
+     * @param condition Set to null to log everything
+     */
+    public void setConditionUnless(String condition) {
+        setCondition(condition);
+    }
+
+
+
+    /**
+     * Set the ServletRequest.attribute to look for to perform
+     * conditional logging. Set to null to log everything.
+     *
+     * @param condition Set to null to log everything
+     */
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }

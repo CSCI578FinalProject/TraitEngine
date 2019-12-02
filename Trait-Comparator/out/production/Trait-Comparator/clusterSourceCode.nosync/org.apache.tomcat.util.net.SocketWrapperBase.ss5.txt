@@ -1,0 +1,11 @@
+2
+
+
+    public int getRemotePort() {
+        if (remotePort == -1) {
+            populateRemotePort();
+        }
+        return remotePort;
+    }
+
+    protected abstract void populateRemotePort();

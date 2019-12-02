@@ -1,0 +1,19 @@
+2
+
+
+    @Override
+    public String getURL(String entry) {
+        StringBuilder result = new StringBuilder("jar:");
+        result.append(getJarFileURL().toExternalForm());
+        result.append("!/");
+        result.append(entry);
+
+        return result.toString();
+    }
+
+
+
+    @Override
+    public URL getJarFileURL() {
+        return jarFileURL;
+    }

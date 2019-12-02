@@ -1,0 +1,22 @@
+5
+
+    public void setTcpNoDelay(boolean tcpNoDelay) {
+        endpoint.setTcpNoDelay(tcpNoDelay);
+    }
+
+    public void setSoLinger(int soLinger) {
+        socketProperties.setSoLingerTime(soLinger);
+        socketProperties.setSoLingerOn(soLinger>=0);
+    }
+
+
+    public void setSoLingerOn(boolean soLingerOn) {
+        this.soLingerOn = Boolean.valueOf(soLingerOn);
+    }
+
+
+    public void setSoLingerTime(int soLingerTime) {
+        this.soLingerTime = Integer.valueOf(soLingerTime);
+    }
+
+    public void setSoLinger(int soLinger) { endpoint.setSoLinger(soLinger); }

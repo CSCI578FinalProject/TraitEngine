@@ -1,0 +1,23 @@
+2
+
+
+
+    /**
+     * @return <code>true</code> if writing is allowed on this context.
+     */
+    protected boolean isWritable() {
+        return ContextAccessController.isWritable(name);
+    }
+
+
+
+    /**
+     * Is the context is writable?
+     *
+     * @param name Name of the context
+     *
+     * @return <code>true</code> if it is writable, otherwise <code>false</code>
+     */
+    public static boolean isWritable(Object name) {
+        return !(readOnlyContexts.containsKey(name));
+    }

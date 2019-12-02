@@ -1,0 +1,12 @@
+2
+
+
+
+    /**
+     * Get the name of the configBase.
+     * For use with JMX management.
+     * @return the config base
+     */
+    public String getConfigBaseName() {
+        return host.getConfigBaseFile().getAbsolutePath();
+    }

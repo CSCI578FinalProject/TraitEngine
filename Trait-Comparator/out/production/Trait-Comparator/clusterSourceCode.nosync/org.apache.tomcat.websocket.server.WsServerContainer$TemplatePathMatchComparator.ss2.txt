@@ -1,0 +1,7 @@
+2
+
+
+
+    public String getNormalizedPath() {
+        return normalized;
+    }

@@ -1,0 +1,14 @@
+2
+
+
+
+    /**
+     * Returns the singleton instance of that class.
+     * @return an instance of that class.
+     */
+    public static SecurityConfig newInstance(){
+        if (singleton == null){
+            singleton = new SecurityConfig();
+        }
+        return singleton;
+    }

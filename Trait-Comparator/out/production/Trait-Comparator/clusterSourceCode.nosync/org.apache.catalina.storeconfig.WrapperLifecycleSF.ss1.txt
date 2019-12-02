@@ -1,0 +1,16 @@
+4
+
+
+
+    /**
+     * @return the set of LifecycleListener classes that will be added to
+     * newly created Wrappers automatically.
+     */
+    @Override
+    public String[] findWrapperLifecycles() {
+
+        synchronized (wrapperLifecyclesLock) {
+            return (wrapperLifecycles);
+        }
+
+    }

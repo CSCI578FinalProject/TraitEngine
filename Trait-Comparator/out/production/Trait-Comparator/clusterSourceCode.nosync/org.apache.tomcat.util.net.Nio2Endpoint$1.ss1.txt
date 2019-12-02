@@ -1,0 +1,6 @@
+4
+
+
+    public SocketWrapperBase<Nio2Channel> getSocket() {
+        return socket;
+    }

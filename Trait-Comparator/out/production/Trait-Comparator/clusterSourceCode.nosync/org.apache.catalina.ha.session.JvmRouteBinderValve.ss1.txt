@@ -1,0 +1,10 @@
+3
+
+
+    /**
+     * @param cluster The cluster to set.
+     */
+    @Override
+    public void setCluster(CatalinaCluster cluster) {
+        this.cluster = cluster;
+    }

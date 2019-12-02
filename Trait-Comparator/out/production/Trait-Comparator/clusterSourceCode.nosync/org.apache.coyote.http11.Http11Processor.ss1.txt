@@ -1,0 +1,8 @@
+2
+
+
+
+    @Override
+    public ByteBuffer getLeftoverInput() {
+        return inputBuffer.getLeftover();
+    }

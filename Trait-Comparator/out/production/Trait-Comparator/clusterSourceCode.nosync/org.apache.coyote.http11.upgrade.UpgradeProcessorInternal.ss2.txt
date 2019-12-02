@@ -1,0 +1,11 @@
+2
+
+
+    void setSslSupport(SSLSupport sslSupport);
+
+
+
+    @Override
+    public final void setSslSupport(SSLSupport sslSupport) {
+        internalHttpUpgradeHandler.setSslSupport(sslSupport);
+    }

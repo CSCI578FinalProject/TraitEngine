@@ -1,0 +1,13 @@
+2
+
+
+    @Override
+    public int hashCode() {
+        return this.expr.hashCode();
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        return (obj instanceof MethodExpressionLiteral && this.hashCode() == obj.hashCode());
+    }

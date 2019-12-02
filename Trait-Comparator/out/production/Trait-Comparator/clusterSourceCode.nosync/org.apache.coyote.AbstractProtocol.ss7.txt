@@ -1,0 +1,11 @@
+2
+
+
+    public void setAcceptorThreadCount(int acceptorThreadCount) {
+        this.acceptorThreadCount = acceptorThreadCount;
+    }
+
+
+    public void setAcceptorThreadCount(int threadCount) {
+        endpoint.setAcceptorThreadCount(threadCount);
+    }

@@ -1,0 +1,15 @@
+74
+
+
+    public Node getParent() {
+        return parent;
+    }
+
+
+    /*
+     * Gets this Node's xmlns attributes that represent tag libraries (only
+     * meaningful for Nodes parsed from XML syntax)
+     */
+    public Attributes getTaglibAttributes() {
+        return this.taglibAttrs;
+    }

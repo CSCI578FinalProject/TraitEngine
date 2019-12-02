@@ -1,0 +1,13 @@
+2
+
+
+    public boolean getUseThread() {
+        return useThread;
+    }
+
+
+    @Override
+    public void heartbeat() {
+        super.heartbeat();
+        if (!getUseThread()) sendPing();
+    }

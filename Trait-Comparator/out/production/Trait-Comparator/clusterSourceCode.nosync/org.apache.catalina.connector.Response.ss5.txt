@@ -1,0 +1,23 @@
+2
+
+
+
+    /**
+     * Is the response output closed ?
+     *
+     * @return closed flag value
+     */
+    public boolean isClosed() {
+        return this.closed;
+    }
+
+
+
+    /**
+     * Closed flag accessor.
+     *
+     * @return <code>true</code> if the response has been closed
+     */
+    public boolean isClosed() {
+        return outputBuffer.isClosed();
+    }

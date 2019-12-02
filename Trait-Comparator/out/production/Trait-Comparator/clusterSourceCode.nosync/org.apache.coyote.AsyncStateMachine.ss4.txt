@@ -1,0 +1,7 @@
+2
+
+
+
+    public boolean isAsync() {
+        return state.isAsync();
+    }

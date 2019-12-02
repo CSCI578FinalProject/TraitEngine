@@ -1,0 +1,8 @@
+5
+
+
+    // ------------------------------------------------------------- Properties
+
+    public int getNonceCountWindowSize() {
+        return nonceCountWindowSize;
+    }

@@ -1,0 +1,11 @@
+2
+
+
+    protected String getPathParameter(String name) {
+        return coyoteRequest.getPathParameter(name);
+    }
+
+
+    public String getPathParameter(String name) {
+        return pathParameters.get(name);
+    }

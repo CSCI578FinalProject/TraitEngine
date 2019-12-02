@@ -1,0 +1,13 @@
+1
+
+
+
+    @Override
+    public JspConfigDescriptor getJspConfigDescriptor() {
+        if (SecurityUtil.isPackageProtectionEnabled()) {
+            return (JspConfigDescriptor) doPrivileged("getJspConfigDescriptor",
+                    null);
+        } else {
+            return context.getJspConfigDescriptor();
+        }
+    }

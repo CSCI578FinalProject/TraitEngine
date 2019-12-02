@@ -1,0 +1,14 @@
+2
+
+
+
+    public void setAntiClickJackingOption(String antiClickJackingOption) {
+        for (XFrameOption option : XFrameOption.values()) {
+            if (option.getHeaderValue().equalsIgnoreCase(antiClickJackingOption)) {
+                this.antiClickJackingOption = option;
+                return;
+            }
+        }
+        throw new IllegalArgumentException(
+                sm.getString("httpHeaderSecurityFilter.clickjack.invalid", antiClickJackingOption));
+    }

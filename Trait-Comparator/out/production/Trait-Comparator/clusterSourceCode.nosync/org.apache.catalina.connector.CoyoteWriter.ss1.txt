@@ -1,0 +1,29 @@
+2
+
+
+
+    // --------------------------------------------------------- Writer Methods
+
+
+    @Override
+    public void flush() {
+
+        if (error) {
+            return;
+        }
+
+        try {
+            ob.flush();
+        } catch (IOException e) {
+            error = true;
+        }
+
+    }
+
+
+
+    @Override
+    public boolean checkError() {
+        flush();
+        return error;
+    }

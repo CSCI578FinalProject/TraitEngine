@@ -1,0 +1,11 @@
+2
+
+
+    public boolean isFailing() {
+        return state == FAILING;
+    }
+
+    @Override
+    public boolean isFailing() {
+        return SenderState.getSenderState(this).isFailing();
+    }

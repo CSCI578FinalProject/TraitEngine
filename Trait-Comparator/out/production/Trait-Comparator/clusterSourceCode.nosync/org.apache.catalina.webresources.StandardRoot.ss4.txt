@@ -1,0 +1,13 @@
+2
+
+
+    public int getObjectMaxSize() {
+        // Internally bytes, externally kilobytes
+        return objectMaxSize / 1024;
+    }
+
+
+    @Override
+    public int getCacheObjectMaxSize() {
+        return cache.getObjectMaxSize();
+    }

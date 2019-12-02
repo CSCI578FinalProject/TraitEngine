@@ -1,0 +1,11 @@
+2
+
+
+    public void setBind(String bindaddr) {
+        properties.setProperty("mcastBindAddress", bindaddr);
+    }
+
+
+    public void setMcastBindAddress(String bindaddr) {
+        setBind(bindaddr);
+    }

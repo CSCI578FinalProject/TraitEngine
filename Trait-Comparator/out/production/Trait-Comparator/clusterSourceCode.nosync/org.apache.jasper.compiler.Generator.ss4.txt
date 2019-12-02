@@ -1,0 +1,6 @@
+7
+
+
+    public String getDynamicAttributesMapName() {
+        return dynamicAttrsMapName;
+    }

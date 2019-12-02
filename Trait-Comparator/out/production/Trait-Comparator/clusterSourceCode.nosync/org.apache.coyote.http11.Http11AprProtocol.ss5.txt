@@ -1,0 +1,7 @@
+2
+
+
+    public boolean getDeferAccept() { return ((AprEndpoint)getEndpoint()).getDeferAccept(); }
+
+    @Override
+    public boolean getDeferAccept() { return deferAccept; }

@@ -1,0 +1,23 @@
+2
+
+
+
+    // --------------------------------------------------------- Public Methods
+
+
+    /**
+     * Retrieves the next element in the enumeration.
+     */
+    @Override
+    public NameClassPair next()
+        throws NamingException {
+        return nextElement();
+    }
+
+
+
+    @Override
+    public NameClassPair nextElement() {
+        NamingEntry entry = iterator.next();
+        return new NameClassPair(entry.name, entry.value.getClass().getName());
+    }

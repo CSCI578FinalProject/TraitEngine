@@ -1,0 +1,31 @@
+3
+
+
+    @Override
+    public void close() {
+        setDoRun(false);
+        try {
+            socket.close();
+        }catch (Exception e) {
+            if (log.isDebugEnabled()) {
+                log.debug(sm.getString("bioReplicationTask.socket.closeFailed"), e);
+            }
+        }
+        try {
+            reader.close();
+        }catch (Exception e) {
+            if (log.isDebugEnabled()) {
+                log.debug(sm.getString("bioReplicationTask.reader.closeFailed"), e);
+            }
+        }
+        reader = null;
+        socket = null;
+        super.close();
+    }
+
+
+    public void close()
+    {
+        doRun = false;
+        notify();
+    }

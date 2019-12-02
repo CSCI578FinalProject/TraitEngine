@@ -1,0 +1,24 @@
+2
+
+
+    /**
+     * Return whether the attribute name to look for when
+     * performing conditional logging. If null, every
+     * request is logged.
+     * @return the attribute name
+     */
+    public String getCondition() {
+        return condition;
+    }
+
+
+
+    /**
+     * Return whether the attribute name to look for when
+     * performing conditional logging. If null, every
+     * request is logged.
+     * @return the attribute name
+     */
+    public String getConditionUnless() {
+        return getCondition();
+    }

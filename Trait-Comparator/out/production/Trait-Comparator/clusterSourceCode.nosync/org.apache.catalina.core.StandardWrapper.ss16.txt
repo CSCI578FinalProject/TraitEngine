@@ -1,0 +1,11 @@
+2
+
+
+    public int getErrorCount() {
+        return swValve.getErrorCount();
+    }
+
+
+    public int getErrorCount() {
+        return errorCount.get();
+    }

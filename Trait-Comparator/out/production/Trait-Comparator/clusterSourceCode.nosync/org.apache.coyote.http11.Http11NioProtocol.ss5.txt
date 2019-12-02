@@ -1,0 +1,11 @@
+2
+
+
+
+    // -------------------- Pool setup --------------------
+
+    public void setPollerThreadCount(int count) {
+        ((NioEndpoint)getEndpoint()).setPollerThreadCount(count);
+    }
+
+    public void setPollerThreadCount(int pollerThreadCount) { this.pollerThreadCount = pollerThreadCount; }

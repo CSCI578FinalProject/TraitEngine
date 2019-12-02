@@ -1,0 +1,7 @@
+2
+
+
+    @Override
+    public void onOpen(Session session, EndpointConfig config) {
+        doOnOpen(session, config);
+    }

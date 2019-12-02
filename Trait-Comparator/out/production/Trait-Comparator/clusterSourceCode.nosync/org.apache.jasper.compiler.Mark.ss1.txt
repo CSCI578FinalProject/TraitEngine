@@ -1,0 +1,24 @@
+3
+
+
+
+    /**
+     * @return JSP compilation context with which this JspReader is
+     * associated
+     */
+    JspCompilationContext getJspCompilationContext() {
+        return context;
+    }
+
+
+    void init(Mark other, boolean singleFile) {
+        this.cursor = other.cursor;
+        this.line = other.line;
+        this.col = other.col;
+
+        if (!singleFile) {
+            this.ctxt = other.ctxt;
+            this.stream = other.stream;
+            this.fileName = other.fileName;
+        }
+    }

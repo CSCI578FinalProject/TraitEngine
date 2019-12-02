@@ -1,0 +1,15 @@
+2
+
+
+
+    @Override
+    public int getMajorVersion() {
+        return Constants.MAJOR_VERSION;
+    }
+
+
+
+    @Override
+    public int getMajorVersion() {
+        return context.getMajorVersion();
+    }

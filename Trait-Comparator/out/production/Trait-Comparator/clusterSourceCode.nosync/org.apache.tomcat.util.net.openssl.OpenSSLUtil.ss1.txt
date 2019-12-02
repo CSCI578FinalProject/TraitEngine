@@ -1,0 +1,16 @@
+2
+
+
+    @Override
+    public void configureSessionContext(SSLSessionContext sslSessionContext) {
+        if (jsseUtil != null) {
+            jsseUtil.configureSessionContext(sslSessionContext);
+        }
+    }
+
+
+    @Override
+    public void configureSessionContext(SSLSessionContext sslSessionContext) {
+        sslSessionContext.setSessionCacheSize(sslHostConfig.getSessionCacheSize());
+        sslSessionContext.setSessionTimeout(sslHostConfig.getSessionTimeout());
+    }

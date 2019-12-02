@@ -1,0 +1,16 @@
+2
+
+
+
+    /**
+     * Ensure child Realms are destroyed when this Realm is destroyed.
+     */
+    @Override
+    protected void destroyInternal() throws LifecycleException {
+        for (Realm realm : realms) {
+            if (realm instanceof Lifecycle) {
+                ((Lifecycle) realm).destroy();
+            }
+        }
+        super.destroyInternal();
+    }

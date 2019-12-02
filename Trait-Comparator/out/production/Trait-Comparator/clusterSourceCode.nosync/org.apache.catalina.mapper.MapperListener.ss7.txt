@@ -1,0 +1,58 @@
+3
+
+
+
+    /**
+     * Unregister host.
+     */
+    private void unregisterHost(Host host) {
+
+        String hostname = host.getName();
+
+        mapper.removeHost(hostname);
+
+        if(log.isDebugEnabled()) {
+            log.debug(sm.getString("mapperListener.unregisterHost", hostname,
+                    domain, service));
+        }
+    }
+
+
+
+    /**
+     * Unregister context.
+     */
+    private void unregisterContext(Context context) {
+
+        String contextPath = context.getPath();
+        if ("/".equals(contextPath)) {
+            contextPath = "";
+        }
+        String hostName = context.getParent().getName();
+
+        if (context.getPaused()) {
+            if (log.isDebugEnabled()) {
+                log.debug(sm.getString("mapperListener.pauseContext",
+                        contextPath, service));
+            }
+
+            mapper.pauseContextVersion(context, hostName, contextPath,
+                    context.getWebappVersion());
+        } else {
+            if (log.isDebugEnabled()) {
+                log.debug(sm.getString("mapperListener.unregisterContext",
+                        contextPath, service));
+            }
+
+            mapper.removeContextVersion(context, hostName, contextPath,
+                    context.getWebappVersion());
+        }
+    }
+
+
+    /**
+     * Is this Context paused whilst it is reloaded?
+     *
+     * @return <code>true</code> if the context has been paused
+     */
+    public boolean getPaused();

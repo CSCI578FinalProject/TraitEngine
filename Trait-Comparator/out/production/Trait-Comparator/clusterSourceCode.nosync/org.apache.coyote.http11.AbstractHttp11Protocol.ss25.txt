@@ -1,0 +1,11 @@
+2
+
+    public SSLHostConfig[] findSslHostConfigs() {
+        return sslHostConfigs.values().toArray(new SSLHostConfig[0]);
+    }
+
+
+    @Override
+    public SSLHostConfig[] findSslHostConfigs() {
+        return getEndpoint().findSslHostConfigs();
+    }

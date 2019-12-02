@@ -1,0 +1,9 @@
+2
+
+
+    /**
+     * Get the last time this object was used in ms.
+     *
+     * @return long time in ms
+     */
+    long getLastUsed();

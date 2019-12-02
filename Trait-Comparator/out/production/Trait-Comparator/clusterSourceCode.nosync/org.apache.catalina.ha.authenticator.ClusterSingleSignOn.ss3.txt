@@ -1,0 +1,27 @@
+7
+
+    @Override
+    public CatalinaCluster getCluster() { return cluster; }
+
+
+
+    @Override
+    protected synchronized void stopInternal() throws LifecycleException {
+        super.stopInternal();
+        engine = null;
+    }
+
+
+    @Override
+    protected synchronized void stopInternal() throws LifecycleException {
+        super.stopInternal();
+        Iterator<RewriteMap> values = maps.values().iterator();
+        while (values.hasNext()) {
+            RewriteMap map = values.next();
+            if (map instanceof Lifecycle) {
+                ((Lifecycle) map).stop();
+            }
+        }
+        maps.clear();
+        rules = null;
+    }

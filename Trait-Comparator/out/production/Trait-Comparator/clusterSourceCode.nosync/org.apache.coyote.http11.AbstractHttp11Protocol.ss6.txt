@@ -1,0 +1,29 @@
+4
+
+
+
+    public void setTruststoreType(String truststoreType){
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setTruststoreType(truststoreType);
+    }
+
+
+
+    public void setTruststoreType(String truststoreType) {
+        setProperty("truststoreType", Type.JSSE);
+        this.truststoreType = truststoreType;
+    }
+
+
+
+    public void setTrustManagerClassName(String trustManagerClassName) {
+        setProperty("trustManagerClassName", Type.JSSE);
+        this.trustManagerClassName = trustManagerClassName;
+    }
+
+
+
+    public void setTrustManagerClassName(String trustManagerClassName) {
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setTrustManagerClassName(trustManagerClassName);
+    }

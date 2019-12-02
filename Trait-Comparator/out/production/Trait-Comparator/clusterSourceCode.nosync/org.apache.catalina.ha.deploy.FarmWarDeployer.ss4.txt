@@ -1,0 +1,15 @@
+2
+
+
+    public File getDeployDirFile() {
+        if (deployDirFile != null) return deployDirFile;
+
+        File dir = getAbsolutePath(getDeployDir());
+        this.deployDirFile = dir;
+        return dir;
+    }
+
+
+    public String getDeployDir() {
+        return deployDir;
+    }

@@ -1,0 +1,16 @@
+2
+
+
+
+    public void setCertificateFile(String certificateFile) {
+        registerDefaultCertificate();
+        defaultCertificate.setCertificateFile(certificateFile);
+    }
+
+
+
+    public void setCertificateFile(String certificateFile) {
+        sslHostConfig.setProperty(
+                "Certificate.certificateFile", SSLHostConfig.Type.OPENSSL);
+        this.certificateFile = certificateFile;
+    }

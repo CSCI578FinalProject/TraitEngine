@@ -1,0 +1,10 @@
+5
+
+
+
+    public abstract SSLSupport getSSLSupport(SSLSession session);
+
+
+    public SSLEngine getSslEngine() {
+        return sslEngine;
+    }

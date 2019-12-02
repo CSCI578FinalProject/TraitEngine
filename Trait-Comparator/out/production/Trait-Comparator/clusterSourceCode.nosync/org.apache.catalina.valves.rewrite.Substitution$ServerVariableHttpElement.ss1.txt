@@ -1,0 +1,4 @@
+2
+
+
+    public abstract String resolveHttp(String key);

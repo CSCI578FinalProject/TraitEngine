@@ -1,0 +1,39 @@
+4
+
+
+
+    @Override
+    @SuppressWarnings("unchecked") // doPrivileged() returns the correct type
+    public Set<SessionTrackingMode> getDefaultSessionTrackingModes() {
+        if (SecurityUtil.isPackageProtectionEnabled()) {
+            return (Set<SessionTrackingMode>)
+                doPrivileged("getDefaultSessionTrackingModes", null);
+        } else {
+            return context.getDefaultSessionTrackingModes();
+        }
+    }
+
+
+
+    @Override
+    public Set<SessionTrackingMode> getDefaultSessionTrackingModes() {
+        return defaultSessionTrackingModes;
+    }
+
+
+
+    @Override
+    public String getServerInfo() {
+        return ServerInfo.getServerInfo();
+    }
+
+
+
+    @Override
+    public String getServerInfo() {
+        if (SecurityUtil.isPackageProtectionEnabled()) {
+            return (String) doPrivileged("getServerInfo", null);
+        } else {
+            return context.getServerInfo();
+        }
+    }

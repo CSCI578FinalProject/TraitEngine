@@ -1,0 +1,30 @@
+6
+
+
+    public String getJspFile() {
+        return jspFile;
+    }
+
+
+    /*
+     * Gets the collection of tag libraries that are associated with a URI
+     *
+     * @return Collection of tag libraries that are associated with a URI
+     */
+    public Collection<TagLibraryInfo> getTaglibs() {
+        return taglibsMap.values();
+    }
+
+
+    @Override
+    public TagLibraryInfo[] getTagLibraryInfos() {
+        Collection<TagLibraryInfo> coll = pi.getTaglibs();
+        return coll.toArray(new TagLibraryInfo[0]);
+    }
+
+
+    @Override
+    public TagLibraryInfo[] getTagLibraryInfos() {
+        Collection<TagLibraryInfo> coll = pi.getTaglibs();
+        return coll.toArray(new TagLibraryInfo[coll.size()]);
+    }

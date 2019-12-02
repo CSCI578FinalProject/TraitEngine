@@ -1,0 +1,18 @@
+4
+
+
+    @Override
+    public E peekFirst() {
+        lock.lock();
+        try {
+            return first == null ? null : first.item;
+        } finally {
+            lock.unlock();
+        }
+    }
+
+
+    @Override
+    public E peek() {
+        return peekFirst();
+    }

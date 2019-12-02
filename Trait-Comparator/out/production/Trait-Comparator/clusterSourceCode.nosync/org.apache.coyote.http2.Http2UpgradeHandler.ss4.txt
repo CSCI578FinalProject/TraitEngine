@@ -1,0 +1,13 @@
+3
+
+
+
+    // ---------------------------------------------- Http2Parser.Output methods
+
+    @Override
+    public HpackDecoder getHpackDecoder() {
+        if (hpackDecoder == null) {
+            hpackDecoder = new HpackDecoder(remoteSettings.getHeaderTableSize());
+        }
+        return hpackDecoder;
+    }

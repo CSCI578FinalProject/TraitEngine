@@ -1,0 +1,14 @@
+2
+
+
+    public String getName() {
+        if (exceptionType == null) {
+            return Integer.toString(errorCode);
+        } else {
+            return exceptionType;
+        }
+    }
+
+    public void addErrorPage(ErrorPage errorPage) {
+        errorPages.put(errorPage.getName(), errorPage);
+    }

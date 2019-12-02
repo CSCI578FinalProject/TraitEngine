@@ -1,0 +1,19 @@
+3
+
+
+    public void setDoRun(boolean doRun) {
+        this.doRun = doRun;
+    }
+
+
+    public void stop() {
+        running = false;
+        synchronized (mutex) {
+            Iterator<AbstractRxTask> i = idle.iterator();
+            while ( i.hasNext() ) {
+                AbstractRxTask worker = i.next();
+                returnWorker(worker);
+                i.remove();
+            }
+        }
+    }

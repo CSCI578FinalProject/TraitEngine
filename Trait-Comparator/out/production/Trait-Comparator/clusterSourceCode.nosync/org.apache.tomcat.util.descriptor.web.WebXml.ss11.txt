@@ -1,0 +1,13 @@
+2
+
+
+    public void setOverridable(boolean overridable) {
+        this.overridable = overridable;
+    }
+
+    public void addServlet(ServletDef servletDef) {
+        servlets.put(servletDef.getServletName(), servletDef);
+        if (overridable) {
+            servletDef.setOverridable(overridable);
+        }
+    }

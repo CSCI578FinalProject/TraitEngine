@@ -1,0 +1,86 @@
+7
+
+
+
+    private static Charset getCharset(final String encoding) throws IOException {
+        if (Globals.IS_SECURITY_ENABLED) {
+            try {
+                return AccessController.doPrivileged(
+                        new PrivilegedExceptionAction<Charset>() {
+                            @Override
+                            public Charset run() throws IOException {
+                                return B2CConverter.getCharset(encoding);
+                            }
+                        });
+            } catch (PrivilegedActionException ex) {
+                Exception e = ex.getException();
+                if (e instanceof IOException) {
+                    throw (IOException) e;
+                } else {
+                    throw new IOException(ex);
+                }
+            }
+        } else {
+            return B2CConverter.getCharset(encoding);
+        }
+    }
+
+
+
+    private void setConverter() throws IOException {
+
+        if (coyoteResponse != null) {
+            enc = coyoteResponse.getCharacterEncoding();
+        }
+
+        if (enc == null) {
+            enc = org.apache.coyote.Constants.DEFAULT_CHARACTER_ENCODING;
+        }
+
+        final Charset charset = getCharset(enc);
+        conv = encoders.get(charset);
+
+        if (conv == null) {
+            conv = createConverter(charset);
+            encoders.put(charset, conv);
+        }
+    }
+
+
+
+    public void checkConverter() throws IOException {
+        if (conv == null) {
+            setConverter();
+        }
+    }
+
+
+
+    private static C2BConverter createConverter(final Charset charset) throws IOException {
+        if (Globals.IS_SECURITY_ENABLED){
+            try {
+                return AccessController.doPrivileged(
+                        new PrivilegedExceptionAction<C2BConverter>(){
+                            @Override
+                            public C2BConverter run() throws IOException{
+                                return new C2BConverter(charset);
+                            }
+                        }
+                );
+            } catch (PrivilegedActionException ex) {
+                Exception e = ex.getException();
+                if (e instanceof IOException) {
+                    throw (IOException) e;
+                } else {
+                    throw new IOException(ex);
+                }
+            }
+        } else {
+            return new C2BConverter(charset);
+        }
+    }
+
+
+    public String getCharacterEncoding() {
+        return characterEncoding;
+    }

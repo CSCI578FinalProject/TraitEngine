@@ -1,0 +1,6 @@
+2
+
+
+    private ByteBuffer getBuffer(int size) {
+        return (getDirectBuffer()?ByteBuffer.allocateDirect(size):ByteBuffer.allocate(size));
+    }

@@ -1,0 +1,10 @@
+4
+
+
+
+    @Override
+    protected void stopInternal() throws LifecycleException {
+        if (sessionIdGenerator instanceof Lifecycle) {
+            ((Lifecycle) sessionIdGenerator).stop();
+        }
+    }

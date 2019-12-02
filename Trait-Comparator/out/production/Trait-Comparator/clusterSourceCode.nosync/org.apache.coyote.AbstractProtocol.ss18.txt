@@ -1,0 +1,7 @@
+2
+
+    public void setAddress(InetAddress address) { this.address = address; }
+
+    public void setAddress(InetAddress ia) {
+        endpoint.setAddress(ia);
+    }

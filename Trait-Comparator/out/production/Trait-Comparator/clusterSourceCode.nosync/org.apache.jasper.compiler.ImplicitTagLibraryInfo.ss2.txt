@@ -1,0 +1,7 @@
+3
+
+
+
+    public Set<String> getResourcePaths(String path) {
+        return context.getResourcePaths(canonicalURI(path));
+    }

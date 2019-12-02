@@ -1,0 +1,133 @@
+18
+
+
+    protected void parse(BufferedReader reader) throws LifecycleException {
+        ArrayList<RewriteRule> rules = new ArrayList<>();
+        ArrayList<RewriteCond> conditions = new ArrayList<>();
+        while (true) {
+            try {
+                String line = reader.readLine();
+                if (line == null) {
+                    break;
+                }
+                Object result = parse(line);
+                if (result instanceof RewriteRule) {
+                    RewriteRule rule = (RewriteRule) result;
+                    if (container.getLogger().isDebugEnabled()) {
+                        container.getLogger().debug("Add rule with pattern " + rule.getPatternString()
+                                + " and substitution " + rule.getSubstitutionString());
+                    }
+                    for (int i = (conditions.size() - 1); i > 0; i--) {
+                        if (conditions.get(i - 1).isOrnext()) {
+                            conditions.get(i).setOrnext(true);
+                        }
+                    }
+                    for (int i = 0; i < conditions.size(); i++) {
+                        if (container.getLogger().isDebugEnabled()) {
+                            RewriteCond cond = conditions.get(i);
+                            container.getLogger().debug("Add condition " + cond.getCondPattern()
+                                    + " test " + cond.getTestString() + " to rule with pattern "
+                                    + rule.getPatternString() + " and substitution "
+                                    + rule.getSubstitutionString() + (cond.isOrnext() ? " [OR]" : "")
+                                    + (cond.isNocase() ? " [NC]" : ""));
+                        }
+                        rule.addCondition(conditions.get(i));
+                    }
+                    conditions.clear();
+                    rules.add(rule);
+                } else if (result instanceof RewriteCond) {
+                    conditions.add((RewriteCond) result);
+                } else if (result instanceof Object[]) {
+                    String mapName = (String) ((Object[]) result)[0];
+                    RewriteMap map = (RewriteMap) ((Object[]) result)[1];
+                    maps.put(mapName, map);
+                    if (map instanceof Lifecycle) {
+                        ((Lifecycle) map).start();
+                    }
+                }
+            } catch (IOException e) {
+                container.getLogger().error("Error reading configuration", e);
+            }
+        }
+        this.rules = rules.toArray(new RewriteRule[0]);
+
+        // Finish parsing the rules
+        for (int i = 0; i < this.rules.length; i++) {
+            this.rules[i].parse(maps);
+        }
+    }
+
+
+    public void setTestString(String testString) {
+        this.testString = testString;
+    }
+
+
+    public String setParameters(String params);
+
+
+    public String getTestString() {
+        return testString;
+    }
+
+
+    public void addCondition(RewriteCond condition) {
+        RewriteCond[] conditions = new RewriteCond[this.conditions.length + 1];
+        for (int i = 0; i < this.conditions.length; i++) {
+            conditions[i] = this.conditions[i];
+        }
+        conditions[this.conditions.length] = condition;
+        this.conditions = conditions;
+    }
+
+
+    public void setOrnext(boolean ornext) {
+        this.ornext = ornext;
+    }
+
+
+    public String getSubstitutionString() {
+        return substitutionString;
+    }
+
+
+    public String getCondPattern() {
+        return condPattern;
+    }
+
+
+    public void setSubstitutionString(String substitutionString) {
+        this.substitutionString = substitutionString;
+    }
+
+
+    public void setPatternString(String patternString) {
+        this.patternString = patternString;
+    }
+
+
+    public void setCondPattern(String condPattern) {
+        this.condPattern = condPattern;
+    }
+
+
+    public boolean isNocase() {
+        return nocase;
+    }
+
+
+    public boolean isOrnext() {
+        return ornext;
+    }
+
+
+    public String getPatternString() {
+        return patternString;
+    }
+
+
+    public void setConfiguration(String configuration)
+        throws Exception {
+        maps.clear();
+        parse(new BufferedReader(new StringReader(configuration)));
+    }

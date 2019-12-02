@@ -1,0 +1,80 @@
+12
+
+
+    public synchronized void setRequestCount(int requestCount) {
+        deadRequestCount = requestCount;
+        for (RequestInfo rp : processors) {
+            rp.setRequestCount( requestCount );
+        }
+    }
+
+
+    public void setRequestCount(int requestCount) {
+        this.requestCount = requestCount;
+    }
+
+
+    public void setMaxTime(long maxTime) {
+        this.maxTime = maxTime;
+    }
+
+
+    // Used to reset the times
+    public synchronized void setMaxTime(long maxTime) {
+        deadMaxTime = maxTime;
+        for (RequestInfo rp : processors) {
+            rp.setMaxTime(maxTime);
+        }
+    }
+
+
+    public void setErrorCount(int errorCount) {
+        this.errorCount = errorCount;
+    }
+
+
+    public synchronized void setErrorCount(int errorCount) {
+        deadErrorCount = errorCount;
+        for (RequestInfo rp : processors) {
+            rp.setErrorCount( errorCount);
+        }
+    }
+
+
+    public void setProcessingTime(long processingTime) {
+        this.processingTime = processingTime;
+    }
+
+
+    public synchronized void setProcessingTime(long totalTime) {
+        deadProcessingTime = totalTime;
+        for (RequestInfo rp : processors) {
+            rp.setProcessingTime( totalTime );
+        }
+    }
+
+
+    public void setBytesSent(long bytesSent) {
+        this.bytesSent = bytesSent;
+    }
+
+
+    public synchronized void setBytesSent(long bytesSent) {
+        deadBytesSent = bytesSent;
+        for (RequestInfo rp : processors) {
+            rp.setBytesSent( bytesSent );
+        }
+    }
+
+
+    public void setBytesReceived(long bytesReceived) {
+        this.bytesReceived = bytesReceived;
+    }
+
+
+    public synchronized void setBytesReceived(long bytesReceived) {
+        deadBytesReceived = bytesReceived;
+        for (RequestInfo rp : processors) {
+            rp.setBytesReceived( bytesReceived );
+        }
+    }

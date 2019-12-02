@@ -1,0 +1,15 @@
+2
+
+
+    public String getTempDir() {
+        return tempDir;
+    }
+
+
+    public File getTempDirFile() {
+        if (tempDirFile != null) return tempDirFile;
+
+        File dir = getAbsolutePath(getTempDir());
+        this.tempDirFile = dir;
+        return dir;
+    }

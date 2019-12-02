@@ -1,0 +1,11 @@
+3
+
+
+    public void putNonCustomTagPrefix(String prefix, Mark where) {
+        nonCustomTagPrefixMap.put(prefix, where);
+    }
+
+
+    public boolean isErrorOnUndeclaredNamespace() {
+        return errorOnUndeclaredNamepsace;
+    }

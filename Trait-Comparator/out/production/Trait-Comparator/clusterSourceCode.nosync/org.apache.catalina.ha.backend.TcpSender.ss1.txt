@@ -1,0 +1,31 @@
+3
+
+    public String getProxyList() { return proxyList; }
+
+
+
+    @Override
+    public void init(HeartbeatListener config) throws Exception {
+        this.config = config;
+        StringTokenizer tok = new StringTokenizer(config.getProxyList(), ",");
+        proxies = new Proxy[tok.countTokens()];
+        int i = 0;
+        while (tok.hasMoreTokens()) {
+            String token = tok.nextToken().trim();
+            int pos = token.indexOf(':');
+            if (pos <=0)
+                throw new Exception("bad ProxyList");
+            proxies[i] = new Proxy();
+            proxies[i].port = Integer.parseInt(token.substring(pos + 1));
+            try {
+                 proxies[i].address = InetAddress.getByName(token.substring(0, pos));
+            } catch (Exception e) {
+                throw new Exception("bad ProxyList");
+            }
+            i++;
+        }
+        connections = new Socket[proxies.length];
+        connectionReaders = new BufferedReader[proxies.length];
+        connectionWriters = new BufferedWriter[proxies.length];
+
+    }

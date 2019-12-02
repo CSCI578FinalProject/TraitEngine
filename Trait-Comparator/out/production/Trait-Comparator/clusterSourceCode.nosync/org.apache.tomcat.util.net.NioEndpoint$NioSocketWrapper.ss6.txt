@@ -1,0 +1,11 @@
+4
+
+
+    public NioSelectorPool getSelectorPool() {
+        return selectorPool;
+    }
+
+
+    public SocketBufferHandler getBufHandler() {
+        return bufHandler;
+    }

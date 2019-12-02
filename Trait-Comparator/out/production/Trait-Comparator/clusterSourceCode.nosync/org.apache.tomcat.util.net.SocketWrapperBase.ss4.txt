@@ -1,0 +1,11 @@
+2
+
+
+    public String getLocalAddr() {
+        if (localAddr == null) {
+            populateLocalAddr();
+        }
+        return localAddr;
+    }
+
+    protected abstract void populateLocalAddr();

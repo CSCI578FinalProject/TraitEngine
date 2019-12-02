@@ -1,0 +1,11 @@
+2
+
+
+    public String getRemoteHost() {
+        if (remoteHost == null) {
+            populateRemoteHost();
+        }
+        return remoteHost;
+    }
+
+    protected abstract void populateRemoteHost();

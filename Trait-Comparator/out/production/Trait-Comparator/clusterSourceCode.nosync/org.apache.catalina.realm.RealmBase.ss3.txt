@@ -1,0 +1,22 @@
+2
+
+
+
+    /**
+     * Return a String representation of this component.
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Realm[");
+        sb.append(getName());
+        sb.append(']');
+        return sb.toString();
+    }
+
+
+
+    /**
+     * @return a short name for this Realm implementation, for use in
+     * log messages.
+     */
+    protected abstract String getName();

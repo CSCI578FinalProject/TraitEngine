@@ -1,0 +1,8 @@
+3
+
+
+    @Override
+    public void setQName(int index, String qName) {
+        qNames.remove(super.getQName(index));
+        super.setQName(index, qName);
+    }

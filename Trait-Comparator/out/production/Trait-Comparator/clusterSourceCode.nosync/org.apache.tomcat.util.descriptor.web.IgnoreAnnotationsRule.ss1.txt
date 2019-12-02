@@ -1,0 +1,6 @@
+3
+
+    public void setMetadataComplete(boolean metadataComplete) {
+        this.metadataComplete = metadataComplete; }
+
+    public boolean isMetadataComplete() { return metadataComplete; }

@@ -1,0 +1,13 @@
+2
+
+
+    /**
+     * Flush the channel.
+     *
+     * @return <code>true</code> if the network buffer has been flushed out and
+     *         is empty else <code>false</code> (as a future)
+     */
+    @Override
+    public Future<Boolean> flush() {
+        return new FutureFlush();
+    }

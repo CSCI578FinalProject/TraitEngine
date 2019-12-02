@@ -1,0 +1,13 @@
+3
+
+
+
+    boolean isActive() {
+        return state.isActive();
+    }
+
+
+
+    public synchronized boolean isActive() {
+        return state.isActive();
+    }

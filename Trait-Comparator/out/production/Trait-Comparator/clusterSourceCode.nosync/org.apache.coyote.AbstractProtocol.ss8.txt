@@ -1,0 +1,17 @@
+4
+
+    public void setSoTimeout(int timeout) {
+        setConnectionTimeout(timeout);
+    }
+
+
+    public void setSoTimeout(int soTimeout) {
+        this.soTimeout = Integer.valueOf(soTimeout);
+    }
+
+    public void setConnectionTimeout(int timeout) {
+        // Note that the endpoint uses the alternative name
+        endpoint.setSoTimeout(timeout);
+    }
+
+    public void setSoTimeout(int soTimeout) { socketProperties.setSoTimeout(soTimeout); }

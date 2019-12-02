@@ -1,0 +1,24 @@
+3
+
+
+    public void _jspInit() {
+    }
+
+
+    @Override
+    public void jspInit() {
+    }
+
+
+    public void _jspInit() {
+    }
+
+
+    @Override
+    public final void init(ServletConfig config)
+        throws ServletException
+    {
+        super.init(config);
+        jspInit();
+        _jspInit();
+    }

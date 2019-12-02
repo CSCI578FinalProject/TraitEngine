@@ -1,0 +1,11 @@
+2
+
+
+
+    public void addUpgradeProtocol(UpgradeProtocol upgradeProtocol) {
+        protocolHandler.addUpgradeProtocol(upgradeProtocol);
+    }
+
+
+
+    public void addUpgradeProtocol(UpgradeProtocol upgradeProtocol);

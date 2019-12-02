@@ -1,0 +1,16 @@
+2
+
+
+
+    private boolean checkEof() throws IOException {
+        if ((end - start) == 0) {
+            if (in == null) {
+                return true;
+            }
+            int n = in.realReadBytes();
+            if (n < 0) {
+                return true;
+            }
+        }
+        return false;
+    }

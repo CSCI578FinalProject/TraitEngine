@@ -1,0 +1,15 @@
+2
+
+
+
+    @Override
+    public Request getRequest() {
+        return request;
+    }
+
+
+
+    private void clearNonBlockingListeners() {
+        processor.getRequest().listener = null;
+        processor.getRequest().getResponse().listener = null;
+    }

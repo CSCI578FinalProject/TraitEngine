@@ -1,0 +1,15 @@
+2
+
+
+
+    @Override
+    public JspConfigDescriptor getJspConfigDescriptor() {
+        return jspConfigDescriptor;
+    }
+
+
+
+    @Override
+    public JspConfigDescriptor getJspConfigDescriptor() {
+        return context.getJspConfigDescriptor();
+    }

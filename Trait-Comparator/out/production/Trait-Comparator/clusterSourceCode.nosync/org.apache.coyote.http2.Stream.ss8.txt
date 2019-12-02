@@ -1,0 +1,13 @@
+2
+
+
+
+    boolean isClosedFinal() {
+        return state.isClosedFinal();
+    }
+
+
+
+    public synchronized boolean isClosedFinal() {
+        return state == State.CLOSED_FINAL;
+    }

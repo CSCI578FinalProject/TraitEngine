@@ -1,0 +1,6 @@
+3
+
+    @Override
+    public void setCluster(CatalinaCluster cluster) {
+        this.cluster = cluster;
+    }

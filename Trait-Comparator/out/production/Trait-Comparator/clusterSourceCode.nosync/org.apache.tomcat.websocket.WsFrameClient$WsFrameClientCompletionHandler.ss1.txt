@@ -1,0 +1,6 @@
+6
+
+
+    public int getMinBufferSize() {
+        return minBufferSize;
+    }

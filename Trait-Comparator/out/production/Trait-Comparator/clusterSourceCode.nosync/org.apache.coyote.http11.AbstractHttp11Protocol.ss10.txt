@@ -1,0 +1,15 @@
+2
+
+
+
+    public void setSSLCACertificatePath(String caCertificatePath) {
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setCaCertificatePath(caCertificatePath);
+    }
+
+
+
+    public void setCaCertificatePath(String caCertificatePath) {
+        setProperty("caCertificatePath", Type.OPENSSL);
+        this.caCertificatePath = caCertificatePath;
+    }

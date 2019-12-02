@@ -1,0 +1,9 @@
+2
+
+    public void setMaxHeaderCount(int maxHeaderCount) {
+        this.maxHeaderCount = maxHeaderCount;
+    }
+
+    public void setMaxHeaderCount(int maxHeaderCount) {
+        endpoint.setMaxHeaderCount(maxHeaderCount);
+    }

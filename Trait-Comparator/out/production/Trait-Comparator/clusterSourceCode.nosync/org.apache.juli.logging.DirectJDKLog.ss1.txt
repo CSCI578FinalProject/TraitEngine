@@ -1,0 +1,6 @@
+2
+
+
+    static Log getInstance(String name) {
+        return new DirectJDKLog( name );
+    }

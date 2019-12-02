@@ -1,0 +1,6 @@
+2
+
+
+    public long getServiceStartTime() {
+        return (member!=null) ? member.getServiceStartTime() : -1l;
+    }

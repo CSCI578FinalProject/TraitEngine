@@ -1,0 +1,3 @@
+2
+
+    public int getProcessorCache() { return this.processorCache; }

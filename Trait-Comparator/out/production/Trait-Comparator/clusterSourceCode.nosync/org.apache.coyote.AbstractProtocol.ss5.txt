@@ -1,0 +1,19 @@
+2
+
+
+    /*
+     * Alternative name for connectionTimeout property
+     */
+    public int getSoTimeout() {
+        return getConnectionTimeout();
+    }
+
+
+    /*
+     * When Tomcat expects data from the client, this is the time Tomcat will
+     * wait for that data to arrive before closing the connection.
+     */
+    public int getConnectionTimeout() {
+        // Note that the endpoint uses the alternative name
+        return endpoint.getSoTimeout();
+    }

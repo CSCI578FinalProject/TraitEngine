@@ -1,0 +1,26 @@
+3
+
+
+
+    public void setListener(AsyncListener listener) {
+        this.listener = listener;
+    }
+
+
+    @Override
+    public void addListener(AsyncListener listener) {
+        check();
+        AsyncListenerWrapper wrapper = new AsyncListenerWrapper();
+        wrapper.setListener(listener);
+        listeners.add(wrapper);
+    }
+
+
+    @Override
+    public void addListener(AsyncListener listener, ServletRequest servletRequest,
+            ServletResponse servletResponse) {
+        check();
+        AsyncListenerWrapper wrapper = new AsyncListenerWrapper();
+        wrapper.setListener(listener);
+        listeners.add(wrapper);
+    }

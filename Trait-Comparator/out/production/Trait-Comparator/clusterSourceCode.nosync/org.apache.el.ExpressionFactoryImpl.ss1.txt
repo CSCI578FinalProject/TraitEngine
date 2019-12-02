@@ -1,0 +1,7 @@
+2
+
+
+    @Override
+    public ELResolver getStreamELResolver() {
+        return new StreamELResolverImpl();
+    }

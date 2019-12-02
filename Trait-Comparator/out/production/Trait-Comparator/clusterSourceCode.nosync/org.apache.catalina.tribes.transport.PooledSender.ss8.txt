@@ -1,0 +1,11 @@
+2
+
+
+    public long getMaxWait() {
+        return maxWait;
+    }
+
+
+    public DataSender getSender() {
+        return queue.getSender(getMaxWait());
+    }

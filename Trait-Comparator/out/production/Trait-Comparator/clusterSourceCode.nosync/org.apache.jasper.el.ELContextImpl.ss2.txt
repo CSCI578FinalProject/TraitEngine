@@ -1,0 +1,10 @@
+2
+
+
+    @Override
+    public VariableMapper getVariableMapper() {
+        if (this.variableMapper == null) {
+            this.variableMapper = new VariableMapperImpl();
+        }
+        return this.variableMapper;
+    }

@@ -1,0 +1,16 @@
+2
+
+
+    /**
+     * @return The number of started SSL/TLS handshakes in server mode.
+     */
+    public long accept() {
+        return SSLContext.sessionAccept(context);
+    }
+
+
+    /*
+     * Session resumption statistics methods.
+     * http://www.openssl.org/docs/ssl/SSL_CTX_sess_number.html
+     */
+    public static native long sessionAccept(long ctx);

@@ -1,0 +1,20 @@
+2
+
+
+    private void recycleRequestWrapper(State state) {
+        if (state.wrapRequest instanceof ApplicationHttpRequest) {
+            ((ApplicationHttpRequest) state.wrapRequest).recycle();        }
+    }
+
+
+
+    // -------------------------------------------------------- Package Methods
+
+    /**
+     * Recycle this request
+     */
+    public void recycle() {
+        if (session != null) {
+            session.endAccess();
+        }
+    }

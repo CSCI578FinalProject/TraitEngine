@@ -1,0 +1,26 @@
+4
+
+
+    /**
+     * @param basename
+     *            The basename to set.
+     */
+    public void setBasename(String basename) {
+        this.basename = basename;
+    }
+
+
+    /**
+     * @param string The file name
+     */
+    public void setFilename(String string) {
+        filename = string;
+    }
+
+
+    /**
+     * @param string The encoding
+     */
+    public void setEncoding(String string) {
+        encoding = string;
+    }

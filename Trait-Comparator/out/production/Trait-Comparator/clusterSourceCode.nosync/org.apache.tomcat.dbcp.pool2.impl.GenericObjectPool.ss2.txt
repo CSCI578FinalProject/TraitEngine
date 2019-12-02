@@ -1,0 +1,7 @@
+3
+
+
+    @Override
+    void ensureMinIdle() throws Exception {
+        ensureIdle(getMinIdle(), true);
+    }

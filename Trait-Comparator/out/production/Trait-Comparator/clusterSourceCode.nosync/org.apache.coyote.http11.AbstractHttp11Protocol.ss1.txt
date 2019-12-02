@@ -1,0 +1,15 @@
+2
+
+
+
+    public void setTruststoreProvider(String truststoreProvider) {
+        setProperty("truststoreProvider", Type.JSSE);
+        this.truststoreProvider = truststoreProvider;
+    }
+
+
+
+    public void setTruststoreProvider(String truststoreProvider){
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setTruststoreProvider(truststoreProvider);
+    }

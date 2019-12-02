@@ -1,0 +1,8 @@
+2
+
+
+    public void setPollerThreadPriority(int threadPriority) {
+        ((NioEndpoint)getEndpoint()).setPollerThreadPriority(threadPriority);
+    }
+
+    public void setPollerThreadPriority(int pollerThreadPriority) { this.pollerThreadPriority = pollerThreadPriority; }

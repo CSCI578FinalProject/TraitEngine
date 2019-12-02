@@ -1,0 +1,7 @@
+2
+
+
+
+    public boolean isParseFailed() {
+        return parseFailedReason != null;
+    }

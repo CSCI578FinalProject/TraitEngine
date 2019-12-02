@@ -1,0 +1,25 @@
+12
+
+    public Set<String> getAfterOrdering() { return after; }
+
+    public void addAfterOrdering(String fragmentName) {
+        after.add(fragmentName);
+    }
+
+    public boolean getDelegate() { return delegate; }
+
+    public Set<String> getBeforeOrdering() { return before; }
+
+    public void addBeforeOrdering(String fragmentName) {
+        before.add(fragmentName);
+    }
+
+    public String getJarName() { return jarName; }
+
+    public Set<String> getAbsoluteOrdering() {
+        return absoluteOrdering;
+    }
+
+    public boolean getWebappJar() { return webappJar; }
+
+    public String getName() { return name; }

@@ -1,0 +1,6 @@
+2
+
+
+    public void setScriptless(boolean s) {
+        scriptless = s;
+    }

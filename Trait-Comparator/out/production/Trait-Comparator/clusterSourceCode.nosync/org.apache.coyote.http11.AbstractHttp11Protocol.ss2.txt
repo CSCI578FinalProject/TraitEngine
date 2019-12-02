@@ -1,0 +1,15 @@
+2
+
+
+
+    public void setSessionTimeout(int sessionTimeout) {
+        setProperty("sessionTimeout", Type.JSSE);
+        this.sessionTimeout = sessionTimeout;
+    }
+
+
+
+    public void setSessionTimeout(int sessionTimeout){
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setSessionTimeout(sessionTimeout);
+    }

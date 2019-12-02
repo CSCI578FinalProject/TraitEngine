@@ -1,0 +1,11 @@
+2
+
+
+    SocketState upgradeDispatch(SocketEvent status);
+
+
+
+    @Override
+    public SocketState dispatch(SocketEvent status) {
+        return internalHttpUpgradeHandler.upgradeDispatch(status);
+    }

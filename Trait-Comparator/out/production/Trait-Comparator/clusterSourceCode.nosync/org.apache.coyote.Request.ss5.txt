@@ -1,0 +1,11 @@
+6
+
+
+    public void setURLDecoder( UDecoder u ) {
+        urlDec=u;
+    }
+
+
+    public void setQuery( MessageBytes queryMB ) {
+        this.queryMB=queryMB;
+    }

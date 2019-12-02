@@ -1,0 +1,7 @@
+4
+
+
+
+    public boolean isExpireSessionsOnShutdown() {
+        return expireSessionsOnShutdown;
+    }

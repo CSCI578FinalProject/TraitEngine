@@ -1,0 +1,11 @@
+2
+
+
+
+    public void addSslHostConfig(SSLHostConfig sslHostConfig) {
+        protocolHandler.addSslHostConfig(sslHostConfig);
+    }
+
+
+
+    public void addSslHostConfig(SSLHostConfig sslHostConfig);

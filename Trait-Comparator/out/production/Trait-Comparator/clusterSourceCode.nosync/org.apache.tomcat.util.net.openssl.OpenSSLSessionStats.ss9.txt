@@ -1,0 +1,11 @@
+2
+
+    public static native long sessionConnectRenegotiate(long ctx);
+
+
+    /**
+     * @return The number of start renegotiations in client mode.
+     */
+    public long connectRenegotiate() {
+        return SSLContext.sessionConnectRenegotiate(context);
+    }

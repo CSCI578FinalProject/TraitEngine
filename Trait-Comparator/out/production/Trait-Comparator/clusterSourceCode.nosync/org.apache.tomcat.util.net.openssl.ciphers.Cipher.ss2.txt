@@ -1,0 +1,6 @@
+3
+
+
+    public int getId() {
+        return id;
+    }

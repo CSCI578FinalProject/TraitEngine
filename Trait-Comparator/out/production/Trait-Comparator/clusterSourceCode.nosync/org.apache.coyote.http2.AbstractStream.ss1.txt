@@ -1,0 +1,14 @@
+2
+
+
+
+    void addChild(AbstractStream child) {
+        child.setParent(this);
+        childStreams.add(child);
+    }
+
+
+
+    private void setParent(AbstractStream parent) {
+        this.parentStream = parent;
+    }

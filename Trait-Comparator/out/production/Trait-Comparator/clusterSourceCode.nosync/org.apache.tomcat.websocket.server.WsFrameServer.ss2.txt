@@ -1,0 +1,15 @@
+2
+
+
+
+    @Override
+    protected Transformation getTransformation() {
+        // Overridden to make it visible to other classes in this package
+        return super.getTransformation();
+    }
+
+
+
+    protected Transformation getTransformation() {
+        return transformation;
+    }

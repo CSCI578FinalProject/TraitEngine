@@ -1,0 +1,15 @@
+2
+
+
+
+    public void setAlgorithm(String keyManagerAlgorithm) {
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setKeyManagerAlgorithm(keyManagerAlgorithm);
+    }
+
+
+
+    public void setKeyManagerAlgorithm(String keyManagerAlgorithm) {
+        setProperty("keyManagerAlgorithm", Type.JSSE);
+        this.keyManagerAlgorithm = keyManagerAlgorithm;
+    }

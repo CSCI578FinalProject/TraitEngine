@@ -1,0 +1,10 @@
+2
+
+
+
+    // --------------------------------------------------- AutoCloseable methods
+
+    @Override
+    public void close() throws Exception {
+        internalHttpUpgradeHandler.destroy();
+    }

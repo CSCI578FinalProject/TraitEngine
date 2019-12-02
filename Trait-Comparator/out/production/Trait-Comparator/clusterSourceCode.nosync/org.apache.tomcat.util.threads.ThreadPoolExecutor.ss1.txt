@@ -1,0 +1,22 @@
+2
+
+
+    protected boolean currentThreadShouldBeStopped() {
+        if (threadRenewalDelay >= 0
+            && Thread.currentThread() instanceof TaskThread) {
+            TaskThread currentTaskThread = (TaskThread) Thread.currentThread();
+            if (currentTaskThread.getCreationTime() <
+                    this.lastContextStoppedTime.longValue()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    /**
+     * @return the time (in ms) at which this thread was created
+     */
+    public final long getCreationTime() {
+        return creationTime;
+    }

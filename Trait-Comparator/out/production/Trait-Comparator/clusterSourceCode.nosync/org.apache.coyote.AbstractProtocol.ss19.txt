@@ -1,0 +1,7 @@
+2
+
+    public void setThreadPriority(int threadPriority) { this.threadPriority = threadPriority; }
+
+    public void setThreadPriority(int threadPriority) {
+        endpoint.setThreadPriority(threadPriority);
+    }

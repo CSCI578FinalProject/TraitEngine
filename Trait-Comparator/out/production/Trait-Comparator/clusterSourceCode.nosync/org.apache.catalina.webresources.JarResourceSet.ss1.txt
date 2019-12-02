@@ -1,0 +1,8 @@
+3
+
+
+    @Override
+    protected WebResource createArchiveResource(JarEntry jarEntry,
+            String webAppPath, Manifest manifest) {
+        return new JarResource(this, webAppPath, getBaseUrlString(), jarEntry);
+    }

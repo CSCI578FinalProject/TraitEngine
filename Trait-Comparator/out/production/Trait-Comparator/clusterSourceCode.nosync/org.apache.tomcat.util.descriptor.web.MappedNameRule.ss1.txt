@@ -1,0 +1,11 @@
+2
+
+
+    /**
+     * Set a configured property.
+     * @param name The property name
+     * @param value The property value
+     */
+    public void setProperty(String name, Object value) {
+        properties.put(name, value);
+    }

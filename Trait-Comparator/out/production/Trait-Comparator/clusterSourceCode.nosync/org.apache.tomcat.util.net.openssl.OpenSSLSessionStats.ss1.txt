@@ -1,0 +1,12 @@
+2
+
+
+    /**
+     * @return The number of successfully retrieved sessions from the external
+     *         session cache in server mode.
+     */
+    public long cbHits() {
+        return SSLContext.sessionCbHits(context);
+    }
+
+    public static native long sessionCbHits(long ctx);

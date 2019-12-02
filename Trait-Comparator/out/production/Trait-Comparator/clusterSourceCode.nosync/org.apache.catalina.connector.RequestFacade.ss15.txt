@@ -1,0 +1,19 @@
+2
+
+
+
+    @Override
+    public String getParameter(String name) {
+
+        if (request == null) {
+            throw new IllegalStateException(
+                            sm.getString("requestFacade.nullRequest"));
+        }
+
+        if (Globals.IS_SECURITY_ENABLED){
+            return AccessController.doPrivileged(
+                new GetParameterPrivilegedAction(name));
+        } else {
+            return request.getParameter(name);
+        }
+    }

@@ -1,0 +1,34 @@
+5
+
+
+    public long getContentLengthLong() {
+        if( contentLength > -1 ) {
+            return contentLength;
+        }
+
+        MessageBytes clB = headers.getUniqueValue("content-length");
+        contentLength = (clB == null || clB.isNull()) ? -1 : clB.getLong();
+
+        return contentLength;
+    }
+
+
+
+    @Override
+    public long getContentLengthLong() {
+        return coyoteRequest.getContentLengthLong();
+    }
+
+
+
+    // ---------------------------------------------------- InputFilter Methods
+
+
+    /**
+     * Read the content length from the request.
+     */
+    @Override
+    public void setRequest(Request request) {
+        contentLength = request.getContentLengthLong();
+        remaining = contentLength;
+    }

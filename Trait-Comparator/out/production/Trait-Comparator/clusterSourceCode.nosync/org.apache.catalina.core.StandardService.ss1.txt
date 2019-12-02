@@ -1,0 +1,16 @@
+2
+
+
+
+    /**
+     * Return the parent class loader for this component.
+     */
+    @Override
+    public ClassLoader getParentClassLoader() {
+        if (parentClassLoader != null)
+            return parentClassLoader;
+        if (server != null) {
+            return server.getParentClassLoader();
+        }
+        return ClassLoader.getSystemClassLoader();
+    }

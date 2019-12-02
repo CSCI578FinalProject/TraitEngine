@@ -1,0 +1,8 @@
+2
+
+
+
+    @Override
+    public String getDomain() {
+        return connector.getDomain();
+    }

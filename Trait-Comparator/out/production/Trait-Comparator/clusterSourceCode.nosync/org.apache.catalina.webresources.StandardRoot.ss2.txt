@@ -1,0 +1,13 @@
+2
+
+
+    @Override
+    public void setCacheMaxSize(long cacheMaxSize) {
+        cache.setMaxSize(cacheMaxSize);
+    }
+
+
+    public void setMaxSize(long maxSize) {
+        // Internally bytes, externally kilobytes
+        this.maxSize = maxSize * 1024;
+    }

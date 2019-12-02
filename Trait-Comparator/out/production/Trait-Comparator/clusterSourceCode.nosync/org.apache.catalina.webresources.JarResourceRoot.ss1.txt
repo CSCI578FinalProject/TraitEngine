@@ -1,0 +1,22 @@
+2
+
+
+    private static final Log log = LogFactory.getLog(JarResourceRoot.class);
+
+    @Override
+    protected Log getLog() {
+        return log;
+    }
+
+
+    @Override
+    public URL getCodeBase() {
+        try {
+            return new URL(baseUrl);
+        } catch (MalformedURLException e) {
+            if (getLog().isDebugEnabled()) {
+                getLog().debug(sm.getString("fileResource.getUrlFail", baseUrl), e);
+            }
+            return null;
+        }
+    }

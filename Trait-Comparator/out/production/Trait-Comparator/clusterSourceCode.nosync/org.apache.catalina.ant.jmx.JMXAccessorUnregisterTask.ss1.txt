@@ -1,0 +1,14 @@
+2
+
+
+    // ------------------------------------------------------ protected Methods
+
+    @Override
+    public String jmxExecute(MBeanServerConnection jmxServerConnection)
+        throws Exception {
+
+        if (getName() == null) {
+            throw new BuildException("Must specify a 'name'");
+        }
+        return  jmxUuregister(jmxServerConnection, getName());
+     }

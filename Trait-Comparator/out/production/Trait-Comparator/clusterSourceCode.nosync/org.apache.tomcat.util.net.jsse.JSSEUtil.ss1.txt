@@ -1,0 +1,14 @@
+3
+
+
+
+    @Override
+    public SSLContext createSSLContext(List<String> negotiableProtocols) throws NoSuchAlgorithmException {
+        return new JSSESSLContext(sslHostConfig.getSslProtocol());
+    }
+
+
+
+    public String getSslProtocol() {
+        return sslProtocol;
+    }

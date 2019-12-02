@@ -1,0 +1,20 @@
+2
+
+
+
+    @Override
+    public void sendPong(ByteBuffer applicationData) throws IOException,
+            IllegalArgumentException {
+        if (applicationData.remaining() > 125) {
+            throw new IllegalArgumentException(sm.getString("wsRemoteEndpoint.tooMuchData"));
+        }
+        sendMessageBlock(Constants.OPCODE_PONG, applicationData, true);
+    }
+
+
+
+    @Override
+    public final void sendPong(ByteBuffer applicationData) throws IOException,
+            IllegalArgumentException {
+        base.sendPong(applicationData);
+    }

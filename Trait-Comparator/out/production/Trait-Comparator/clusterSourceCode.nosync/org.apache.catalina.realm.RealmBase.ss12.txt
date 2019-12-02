@@ -1,0 +1,11 @@
+2
+
+
+    public String getRealmPath() {
+        return realmPath;
+    }
+
+
+    protected String getRealmSuffix() {
+        return ",realmPath=" + getRealmPath();
+    }

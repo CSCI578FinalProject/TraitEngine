@@ -1,0 +1,11 @@
+2
+
+
+    public String getRemoteAddr() {
+        if (remoteAddr == null) {
+            populateRemoteAddr();
+        }
+        return remoteAddr;
+    }
+
+    protected abstract void populateRemoteAddr();

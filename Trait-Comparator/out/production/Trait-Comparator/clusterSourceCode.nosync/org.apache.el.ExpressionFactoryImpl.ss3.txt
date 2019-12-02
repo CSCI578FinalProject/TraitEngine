@@ -1,0 +1,32 @@
+3
+
+
+    public ValueExpression createValueExpression(Class<?> expectedType)
+            throws ELException {
+        Node n = this.build();
+        return new ValueExpressionImpl(this.expression, n, this.fnMapper,
+                this.varMapper, expectedType);
+    }
+
+
+    @Override
+    public ValueExpression createValueExpression(ELContext context,
+            String expression, Class<?> expectedType) {
+        if (expectedType == null) {
+            throw new NullPointerException(MessageFactory
+                    .get("error.value.expectedType"));
+        }
+        ExpressionBuilder builder = new ExpressionBuilder(expression, context);
+        return builder.createValueExpression(expectedType);
+    }
+
+
+    @Override
+    public ValueExpression createValueExpression(Object instance,
+            Class<?> expectedType) {
+        if (expectedType == null) {
+            throw new NullPointerException(MessageFactory
+                    .get("error.value.expectedType"));
+        }
+        return new ValueExpressionLiteral(instance, expectedType);
+    }

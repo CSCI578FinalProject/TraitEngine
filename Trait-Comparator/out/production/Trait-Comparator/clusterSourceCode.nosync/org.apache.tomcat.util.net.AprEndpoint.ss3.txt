@@ -1,0 +1,16 @@
+2
+
+
+
+    /**
+     * Obtain the number of sendfile sockets.
+     *
+     * @return The number of sockets currently managed by the Sendfile poller.
+     */
+    public int getSendfileCount() {
+        if (sendfile == null) {
+            return 0;
+        }
+
+        return sendfile.getSendfileCount();
+    }

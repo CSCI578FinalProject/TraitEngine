@@ -1,0 +1,8 @@
+3
+
+
+    public void setSelectorTimeout(long timeout) {
+        ((NioEndpoint)getEndpoint()).setSelectorTimeout(timeout);
+    }
+
+    public void setSelectorTimeout(long timeout){ this.selectorTimeout = timeout;}

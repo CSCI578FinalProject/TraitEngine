@@ -1,0 +1,7 @@
+2
+
+
+    public XByteBuffer getBuffer(int minSize, boolean discard) {
+        if ( pool != null ) return pool.getBuffer(minSize, discard);
+        else return new XByteBuffer(minSize,discard);
+    }

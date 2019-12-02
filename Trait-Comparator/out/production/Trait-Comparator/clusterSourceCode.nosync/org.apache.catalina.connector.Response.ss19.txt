@@ -1,0 +1,17 @@
+2
+
+
+
+    public int getBufferSize() {
+        return bb.getLimit();
+    }
+
+
+
+    /**
+     * @return the actual buffer size used for this Response.
+     */
+    @Override
+    public int getBufferSize() {
+        return outputBuffer.getBufferSize();
+    }

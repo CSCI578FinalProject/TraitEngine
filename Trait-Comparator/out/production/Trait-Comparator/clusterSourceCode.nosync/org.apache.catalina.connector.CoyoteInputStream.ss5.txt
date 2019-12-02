@@ -1,0 +1,16 @@
+2
+
+
+
+    boolean isBlocking() {
+        return coyoteRequest.getReadListener() == null;
+    }
+
+
+
+    private void checkNonBlockingRead() {
+        if (!ib.isBlocking() && !ib.isReady()) {
+            throw new IllegalStateException(
+                    sm.getString("coyoteInputStream.nbNotready"));
+        }
+    }

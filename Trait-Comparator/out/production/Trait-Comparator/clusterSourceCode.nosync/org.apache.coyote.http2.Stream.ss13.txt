@@ -1,0 +1,12 @@
+2
+
+
+    public synchronized void closeIfIdle() {
+        stateChange(State.IDLE, State.CLOSED_FINAL);
+    }
+
+
+
+    void closeIfIdle() {
+        state.closeIfIdle();
+    }

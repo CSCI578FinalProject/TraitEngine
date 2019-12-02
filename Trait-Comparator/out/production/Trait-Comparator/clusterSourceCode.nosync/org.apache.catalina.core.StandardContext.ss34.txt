@@ -1,0 +1,44 @@
+5
+
+
+
+    /**
+     * @return <code>true</code> if a webapp start should fail if a Servlet startup fails
+     */
+    public boolean isFailCtxIfServletStartFails() {
+        return failCtxIfServletStartFails;
+    }
+
+
+    protected boolean getComputedFailCtxIfServletStartFails() {
+        if(failCtxIfServletStartFails != null) {
+            return failCtxIfServletStartFails.booleanValue();
+        }
+        //else look at Host config
+        if(getParent() instanceof StandardHost) {
+            return ((StandardHost)getParent()).isFailCtxIfServletStartFails();
+        }
+        //else
+        return false;
+    }
+
+    public List<InjectionTarget> getInjectionTargets();
+
+
+    private void addInjectionTarget(Injectable resource, Map<String, Map<String, String>> injectionMap) {
+        List<InjectionTarget> injectionTargets = resource.getInjectionTargets();
+        if (injectionTargets != null && injectionTargets.size() > 0) {
+            String jndiName = resource.getName();
+            for (InjectionTarget injectionTarget: injectionTargets) {
+                String clazz = injectionTarget.getTargetClass();
+                Map<String, String> injections = injectionMap.get(clazz);
+                if (injections == null) {
+                    injections = new HashMap<>();
+                    injectionMap.put(clazz, injections);
+                }
+                injections.put(injectionTarget.getTargetName(), jndiName);
+            }
+        }
+    }
+
+    public String getName();

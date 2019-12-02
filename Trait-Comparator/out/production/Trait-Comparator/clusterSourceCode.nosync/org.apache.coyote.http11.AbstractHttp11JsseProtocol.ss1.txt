@@ -1,0 +1,11 @@
+2
+
+
+
+    public void setSniParseLimit(int sniParseLimit) {
+        this.sniParseLimit = sniParseLimit;
+    }
+
+    public void setSniParseLimit(int sniParseLimit) {
+        getEndpoint().setSniParseLimit(sniParseLimit);
+    }

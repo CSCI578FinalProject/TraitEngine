@@ -1,0 +1,8 @@
+2
+
+
+    @Override
+    public void addInjectionTarget(String injectionTargetName, String jndiName) {
+        InjectionTarget target = new InjectionTarget(injectionTargetName, jndiName);
+        injectionTargets.add(target);
+    }

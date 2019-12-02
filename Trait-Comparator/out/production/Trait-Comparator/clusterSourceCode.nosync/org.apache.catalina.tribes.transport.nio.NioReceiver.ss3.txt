@@ -1,0 +1,16 @@
+9
+
+
+    @Override
+    public AbstractRxTask createRxTask() {
+        NioReplicationTask thread = new NioReplicationTask(this,this);
+        thread.setUseBufferPool(this.getUseBufferPool());
+        thread.setRxBufSize(getRxBufSize());
+        thread.setOptions(getWorkerThreadOptions());
+        return thread;
+    }
+
+
+    public void setRxBufSize(int rxBufSize) {
+        this.rxBufSize = rxBufSize;
+    }

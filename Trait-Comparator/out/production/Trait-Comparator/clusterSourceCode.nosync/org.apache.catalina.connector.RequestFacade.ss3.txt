@@ -1,0 +1,15 @@
+4
+
+
+    @Override
+    public Part getPart(String name) throws IllegalStateException, IOException,
+            ServletException {
+        return request.getPart(name);
+    }
+
+
+    @Override
+    public Collection<Part> getParts() throws IllegalStateException,
+            IOException, ServletException {
+        return request.getParts();
+    }

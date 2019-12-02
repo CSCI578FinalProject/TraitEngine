@@ -1,0 +1,24 @@
+6
+
+
+
+    Response getCoyoteResponse() {
+        return coyoteResponse;
+    }
+
+
+
+    Request getCoyoteRequest() {
+        return coyoteRequest;
+    }
+
+
+
+    @Override
+    public void recycle() {
+        // StreamProcessor instances are not re-used.
+        // Clear fields that can be cleared to aid GC and trigger NPEs if this
+        // is reused
+        setSocketWrapper(null);
+        setAdapter(null);
+    }

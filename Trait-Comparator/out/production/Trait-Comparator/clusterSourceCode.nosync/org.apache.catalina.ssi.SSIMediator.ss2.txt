@@ -1,0 +1,76 @@
+9
+
+
+    /**
+     * Get the timezone used for formatting conversions
+     *
+     * @return the timezone
+     */
+    public TimeZone getTimeZone() {
+        return simpleDateFormat.getTimeZone();
+    }
+
+
+
+    public void setConfigTimeFmt(String configTimeFmt) {
+        setConfigTimeFmt(configTimeFmt, false);
+    }
+
+
+
+    public void setConfigTimeFmt(String configTimeFmt, boolean fromConstructor) {
+        this.configTimeFmt = configTimeFmt;
+        this.strftime = new Strftime(configTimeFmt, Locale.US);
+        //Variables like DATE_LOCAL, DATE_GMT, and LAST_MODIFIED need to be
+        // updated when
+        //the timefmt changes. This is what Apache SSI does.
+        setDateVariables(fromConstructor);
+    }
+
+
+    /**
+     * Change the timezone used to format dates
+     *
+     * @param timeZone The new time zone
+     * @see SimpleDateFormat#setTimeZone
+     */
+    public void setTimeZone( TimeZone timeZone ) {
+        simpleDateFormat.setTimeZone( timeZone );
+    }
+
+
+    /**
+     * Format the date according to the strftime-style string given in the constructor.
+     *
+     * @param date the date to format
+     * @return the formatted date
+     */
+    public String format( Date date ) {
+        return simpleDateFormat.format( date );
+    }
+
+
+
+    public void setVariableValue(String variableName, String variableValue) {
+        if (!isNameReserved(variableName)) {
+            ssiExternalResolver.setVariableValue(variableName, variableValue);
+        }
+    }
+
+
+
+    /**
+     * Set the named variable to the specified value. If value is null, then
+     * the variable will be removed ( ie. a call to getVariableValue will
+     * return null )
+     *
+     * @param name
+     *            of the variable
+     * @param value
+     *            of the variable
+     */
+    public void setVariableValue(String name, String value);
+
+
+
+    public String getVariableValue(String name);

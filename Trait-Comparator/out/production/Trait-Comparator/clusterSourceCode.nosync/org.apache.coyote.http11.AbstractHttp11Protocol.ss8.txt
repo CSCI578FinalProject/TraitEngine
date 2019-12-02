@@ -1,0 +1,15 @@
+2
+
+
+
+    public void setCaCertificateFile(String caCertificateFile) {
+        setProperty("caCertificateFile", Type.OPENSSL);
+        this.caCertificateFile = caCertificateFile;
+    }
+
+
+
+    public void setSSLCACertificateFile(String caCertificateFile) {
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setCaCertificateFile(caCertificateFile);
+    }

@@ -1,0 +1,18 @@
+2
+
+
+
+    /**
+     * Open the new log file for the date specified by <code>date</code>.
+     */
+    protected void open() {
+        openWriter();
+    }
+
+
+    @Override
+    protected void open() {
+        if(!closed) return;
+        closed = false;
+        super.open();
+    }

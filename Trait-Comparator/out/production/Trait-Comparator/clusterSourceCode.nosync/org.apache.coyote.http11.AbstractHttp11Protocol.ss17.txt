@@ -1,0 +1,6 @@
+1
+
+    public void setSSLCertificateChainFile(String certificateChainFile) {
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setCertificateChainFile(certificateChainFile);
+    }

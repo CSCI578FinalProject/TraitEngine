@@ -1,0 +1,8 @@
+1
+
+
+
+    public void setKeystoreType(String certificateKeystoreType) {
+        registerDefaultSSLHostConfig();
+        defaultSSLHostConfig.setCertificateKeystoreType(certificateKeystoreType);
+    }

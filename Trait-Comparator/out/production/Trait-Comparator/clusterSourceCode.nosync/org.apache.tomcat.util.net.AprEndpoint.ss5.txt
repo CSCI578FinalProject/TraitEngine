@@ -1,0 +1,10 @@
+2
+
+
+
+    // ------------------------------------------------------ Protected Methods
+
+    @Override
+    protected AbstractEndpoint.Acceptor createAcceptor() {
+        return new Acceptor();
+    }

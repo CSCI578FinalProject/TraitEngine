@@ -1,0 +1,6 @@
+2
+
+
+    public long getCompletedTaskCount() {
+        return (executor != null) ? executor.getCompletedTaskCount() : 0;
+    }

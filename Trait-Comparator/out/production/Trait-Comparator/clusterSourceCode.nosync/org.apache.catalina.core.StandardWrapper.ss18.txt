@@ -1,0 +1,11 @@
+2
+
+
+    public long getMinTime() {
+        return minTime;
+    }
+
+
+    public long getMinTime() {
+        return swValve.getMinTime();
+    }

@@ -1,0 +1,12 @@
+2
+
+
+
+    public static void collect(Compiler compiler, Node.Nodes page)
+        throws JasperException {
+
+    CollectVisitor collectVisitor = new CollectVisitor();
+        page.visit(collectVisitor);
+        collectVisitor.updatePageInfo(compiler.getPageInfo());
+
+    }

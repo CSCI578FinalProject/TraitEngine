@@ -1,0 +1,15 @@
+2
+
+
+    /**
+     * A channel heartbeat, use this method to clean up resources
+     */
+    @Override
+    public void heartbeat() ;
+
+
+    @Override
+    public void heartbeat() {
+        if ( clusterSender!=null ) clusterSender.heartbeat();
+        super.heartbeat();
+    }

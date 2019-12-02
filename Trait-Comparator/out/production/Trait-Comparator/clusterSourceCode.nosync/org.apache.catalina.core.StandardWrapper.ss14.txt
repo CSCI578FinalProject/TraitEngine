@@ -1,0 +1,11 @@
+2
+
+
+    public long getProcessingTime() {
+        return swValve.getProcessingTime();
+    }
+
+
+    public long getProcessingTime() {
+        return processingTime;
+    }

@@ -1,0 +1,3 @@
+2
+
+    public static native long sessionTimeouts(long ctx);

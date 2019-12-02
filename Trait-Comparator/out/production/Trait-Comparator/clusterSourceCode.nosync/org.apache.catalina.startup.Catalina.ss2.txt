@@ -1,0 +1,72 @@
+3
+
+
+
+    /**
+     * Enables or disables naming support.
+     *
+     * @param useNaming The new use naming value
+     */
+    public void setUseNaming(boolean useNaming) {
+        this.useNaming = useNaming;
+    }
+
+
+
+    /**
+     * Print usage information for this application.
+     */
+    protected void usage() {
+
+        System.out.println
+            ("usage: java org.apache.catalina.startup.Catalina"
+             + " [ -config {pathname} ]"
+             + " [ -nonaming ] "
+             + " { -help | start | stop }");
+
+    }
+
+
+    // ------------------------------------------------------ Protected Methods
+
+
+    /**
+     * Process the specified command line arguments.
+     *
+     * @param args Command line arguments to process
+     * @return <code>true</code> if we should continue processing
+     */
+    protected boolean arguments(String args[]) {
+
+        boolean isConfig = false;
+
+        if (args.length < 1) {
+            usage();
+            return false;
+        }
+
+        for (int i = 0; i < args.length; i++) {
+            if (isConfig) {
+                configFile = args[i];
+                isConfig = false;
+            } else if (args[i].equals("-config")) {
+                isConfig = true;
+            } else if (args[i].equals("-nonaming")) {
+                setUseNaming(false);
+            } else if (args[i].equals("-help")) {
+                usage();
+                return false;
+            } else if (args[i].equals("start")) {
+                // NOOP
+            } else if (args[i].equals("configtest")) {
+                // NOOP
+            } else if (args[i].equals("stop")) {
+                // NOOP
+            } else {
+                usage();
+                return false;
+            }
+        }
+
+        return true;
+    }

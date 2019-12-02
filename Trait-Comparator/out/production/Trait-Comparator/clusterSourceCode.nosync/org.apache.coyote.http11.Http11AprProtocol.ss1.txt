@@ -1,0 +1,14 @@
+2
+
+
+
+    // ----------------------------------------------------- JMX related methods
+
+    @Override
+    protected String getNamePrefix() {
+        if (isSSLEnabled()) {
+            return ("https-apr");
+        } else {
+            return ("http-apr");
+        }
+    }

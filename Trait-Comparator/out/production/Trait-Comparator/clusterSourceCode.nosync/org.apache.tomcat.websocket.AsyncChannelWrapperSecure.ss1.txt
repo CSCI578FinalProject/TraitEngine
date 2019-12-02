@@ -1,0 +1,13 @@
+2
+
+
+    @Override
+    public Future<Void> handshake() throws SSLException {
+
+        WrapperFuture<Void,Void> wFuture = new WrapperFuture<>();
+
+        Thread t = new WebSocketSslHandshakeThread(wFuture);
+        t.start();
+
+        return wFuture;
+    }

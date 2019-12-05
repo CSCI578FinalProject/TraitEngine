@@ -1,0 +1,12 @@
+Util/ClusterParser.class
+Util/SourceCodeParser.class
+Main.class
+Trait/CompareTrait.class
+TraitComparator.class
+Pattern/CredentialPattern.class
+Trait/CredentialTrait.class
+Pattern/Pattern.class
+Trait/ReturnTrait.class
+Trait/AuthenticateTrait.class
+Trait/DigestTrait.class
+Trait/Trait.class

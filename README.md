@@ -4,7 +4,7 @@
 
 This repository includes the Trait Comparator and the input of Tomcat as an example. 
 
-Trait Comparator calculates each fucntional section's matching score of a pre-defined pattern and output (1) a ranking of the original ACDC clusters and (2) a ranking of the functional sections with their corresponding original ACDC clusters. Pattern are composed of various traits that look for specific characteristics in the source code such as keyword and return type. 
+Trait Comparator calculates each fucntional section's matching score of a pre-defined pattern and output **(1) a ranking of the original ACDC clusters** and **(2) a ranking of the functional sections with their corresponding original ACDC clusters.** Pattern are composed of various traits that look for specific characteristics in the source code such as keyword and return type. 
 
 This engine is a  part of pipeline of Clustering Function Sections Using Grained ACDC. Current it only support source code's sematic analysis by extracting keywords. However, it can be replaced with a module of sematic analysis by machine learning or NLP to achieve better performance in the future.
 
@@ -22,7 +22,7 @@ All input files should be placed in `Input/` dir
 
 (2) Original ACDC cluster result. Eg. `original_ACDC_cluster_tomcat_6.0.rsf`
 
-(3) Function sections result. Eg. `Modified_ACDC_cluster_tomcat_6.0.rsf
+(3) Function sections result. Eg. `Modified_ACDC_cluster_tomcat_6.0.rsf`
 
 
 
@@ -36,7 +36,7 @@ All output file will be placed in `out/` dir
 
 ## How to Run?
 
-Please make sure to have Maven installed.
+Please make sure to have **Maven** installed.
 
 Under directory `Trait-Comparator`
 

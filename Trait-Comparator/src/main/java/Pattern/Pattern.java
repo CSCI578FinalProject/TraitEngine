@@ -5,10 +5,20 @@ import Trait.*;
 import java.util.List;
 
 
-public abstract class Pattern {
+public class Pattern {
 
     List<Trait> traits = null;
 
 
-    public abstract int matchScore(String sourceCode);
+    public int matchScore(String sourceCode){
+        int score = 0;
+
+        for(Trait trait : traits){
+
+            score += trait.matchScore(sourceCode);
+
+        }
+
+        return score;
+    }
 }

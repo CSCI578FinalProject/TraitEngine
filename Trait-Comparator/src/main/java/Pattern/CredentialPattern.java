@@ -17,16 +17,4 @@ public class CredentialPattern extends Pattern {
         traits.add(new AuthenticateTrait());
     }
 
-    @Override
-    public int matchScore(String sourceCode) {
-        int score = 0;
-
-        for(Trait trait : traits){
-
-            score += trait.matchScore(sourceCode);
-
-        }
-
-        return score;
-    }
 }

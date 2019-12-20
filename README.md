@@ -40,6 +40,6 @@ Under directory `Trait-Comparator`
 
 (1) `mvn install`
 
-(2) `mvn exec:java -Dexec.mainClass=Main -Dexec.args="{function_section_source_code_folder} {original_ACDC_cluster_result} {function_sections_result} {version_num}"`
+(2) `mvn exec:java -Dexec.mainClass=Main -Dexec.args="{function_section_source_code_folder} {original_ACDC_cluster_result} {function_sections_result} {version_num} {pattern}"`
 
-Eg.`mvn exec:java -Dexec.mainClass=Main  -Dexec.args="input/function_source_code_tomcat_6.0 input/original_ACDC_cluster_tomcat_6.0.rsf input/modified_ACDC_cluster_tomcat_6.0.rsf 6.0"`
+Eg.`mvn exec:java -Dexec.mainClass=Main  -Dexec.args="input/function_source_code_tomcat_6.0 input/original_ACDC_cluster_tomcat_6.0.rsf input/modified_ACDC_cluster_tomcat_6.0.rsf 6.0 Credential"`
